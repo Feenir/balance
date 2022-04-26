@@ -1,0 +1,66 @@
+*
+  padding: 0
+  margin: 0
+
+.container
+  max-width: 1210px
+  margin: 0 auto
+  padding-left: 80px
+
+li[class]
+    list-style: none
+
+a
+  text-decoration: none
+
+.title_color
+  -webkit-background-clip: text
+  color: #8E8E8E00
+  font-size: 60px
+  line-height: 1.4em
+  word-spacing: 0.1em
+  text-align: center
+
+.text_color
+  -webkit-background-clip: text
+  color: #8E8E8E00
+  font-size: 19px
+  font-weight: 300
+  line-height: 1.8em
+  letter-spacing: 0.6px
+  word-spacing: 0.1em
+  text-align: center
+
+.border_top
+  display: flex
+  position: absolute
+  top: 0
+  height: 44px
+  width: calc(100% - 80px)
+  transform: rotate(180deg)
+  right: 0
+  & svg
+    width: 100%
+    & path
+      fill: white
+
+.border_bottom
+  display: flex
+  position: absolute
+  right: 0
+  bottom: 0
+  height: 35px
+  width: calc(100% - 80px)
+  transform: rotate(180deg)
+  & svg
+    width: 100%
+    & path
+      fill: white
+
+@keyframes video
+  0%
+    top: 23%
+  50%
+    top: 13%
+  100%
+    top: 23%

@@ -1,0 +1,88 @@
+.price
+  &__itemMain
+    display: flex
+    align-items: center
+    flex-direction: column
+    margin-bottom: 100px
+  &__title
+    background-image: linear-gradient(to right top, #ffffff, #775154, #AF8E6B, #222222, #776154)
+  &__textMain
+    color: #848484
+    text-align: center
+    max-width: 670px
+    margin-bottom: 30px
+  &__link
+    padding: 12px 24px
+    &:first-child
+      font-size: 18px
+      font-weight: 200
+      color: #616161
+      background-color: #DCC29D00
+      border: 2px solid #AF8E7B
+      border-radius: 25px
+      margin-right: 15px
+    &:last-child
+      font-size: 18px
+      font-weight: 200
+      color: #FFFFFFE6
+      background-image: linear-gradient(180deg, #776154 0%, #B08F7C 100%)
+      border-radius: 25px
+  &__articles
+    display: flex
+    flex-direction: column
+    align-items: center
+  &__articlesTitle
+    background-image: linear-gradient(to right top, #ffffff, #775154, #AF8E6B, #222222, #776154)
+  &__articlesText
+    background-image: linear-gradient(to right top, #ffffff, #776154, #AF8E7B, #222222, #776154)
+    margin-bottom: 50px
+  &__articlesBlock
+    display: flex
+    justify-content: space-between
+    width: 100%
+    column-gap: 30px
+    margin-bottom: 70px
+  &__articlesItems
+    position: relative
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: flex-end
+    padding: 0 10px 50px 10px
+    width: calc(33.33% - 10px)
+    min-height: 515px
+    background-repeat: no-repeat
+    background-size: cover
+    background-position: center center
+    &:nth-child(1)
+      background-image: url("../img/priceGal/price1.jpg")
+    &:nth-child(2)
+      background-image: url("../img/priceGal/price2.jpg")
+    &:nth-child(3)
+      background-image: url("../img/priceGal/price3.jpg")
+    &-dateBlock
+      position: absolute
+      display: flex
+      flex-direction: column
+      align-items: center
+      justify-content: center
+      top: 15px
+      left: 15px
+      background-color: white
+      color: #333
+      box-shadow: 0 0 9px rgba(0, 0, 0 , 10%)
+      padding: 5px 14px
+    &-text
+      padding: 5px 10px
+      margin-bottom: 20px
+      color: white
+      background-color: black
+      text-transform: uppercase
+    &-title
+      color: white
+      font-size: 22px
+    &-number
+      font-size: 24px
+    &-date
+      font-size: 12px
+      text-transform: uppercase
