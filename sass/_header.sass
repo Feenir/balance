@@ -23,12 +23,26 @@
       color: inherit
     &:not(:last-child)
       margin-right: 50px
-    &:before
-      content: ''
-      width: 30px
-      height: 2.5px
-      background-color: #B08F7C
-      margin-right: 15px
+      &:before
+        content: ''
+        width: 30px
+        height: 2.5px
+        background-color: #B08F7C
+        margin-right: 15px
+    &:last-child
+      &:before
+        content: ''
+        width: 30px
+        height: 30px
+        background-image: url("../img/map.png")
+        background-position: center center
+        background-size: cover
+        border-radius: 50%
+        margin-right: 15px
+
+
+
+
   &__button
     display: flex
     align-items: center

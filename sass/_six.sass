@@ -8,7 +8,6 @@
   height: 100%
   left: 0
 
-
 .six
   position: relative
   &__wrapper
@@ -29,17 +28,35 @@
     background-image: url("../img/six_img.webp")
     background-repeat: no-repeat
     background-size: cover
-    background-position: bottom center
+    background-position: 40px
   &__leftWrapper
     position: absolute
-    left: 0
+    left: -50%
+    transition-property: opacity, left
+    transition-delay: .6s
+    transition-timing-function: ease
+    transition-duration: 2s
+    opacity: 0
   &__rightItems,  &__leftItems
     position: relative
     color: white
     font-size: 20px
     z-index: 200
     cursor: pointer
+    &-popup
+      opacity: 0
+      transition: opacity .5s ease
+      &.show
+        opacity: 1
+
   &__leftItems
+    display: flex
+    align-items: center
+    &-popup
+      $popupWidht: 200px
+      width: $popupWidht
+      left: -$popupWidht
+      position: absolute
     &:first-child
       top: 100px
     &:nth-child(2)
@@ -50,8 +67,20 @@
       right: 200px
   &__rightWrapper
     position: absolute
-    right: 0
+    right: -50%
+    transition-property: opacity, right
+    transition-delay: .6s
+    transition-timing-function: ease
+    transition-duration: 2s
+    opacity: 0
   &__rightItems
+    display: flex
+    align-items: center
+    &-popup
+      $popupWidht: 200px
+      width: $popupWidht
+      right: -$popupWidht - 22
+      position: absolute
     &:first-child
       top: 100px
     &:nth-child(2)
@@ -60,3 +89,18 @@
     &:nth-child(3)
       top: 450px
       left: 200px
+  &__plusImg.rotate
+    & svg
+      transform: rotate(132deg)
+    & svg path
+      fill: red
+
+.six-visible
+  opacity: 1
+  &.six__leftWrapper
+    left: 0
+  &.six__rightWrapper
+    right: 0
+
+
+

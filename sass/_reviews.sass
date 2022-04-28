@@ -6,7 +6,6 @@
 .reviewsSwiper
   padding-bottom: 40px
   margin-bottom: 80px
-  box-shadow: 0 5px 10px 2px rgba(34, 60, 80, 0.2)
   &__slide
     position: relative
     cursor: pointer
@@ -16,30 +15,36 @@
     & a img
       width: 100%
       height: auto
-      box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2)
+      box-shadow: 0 5px 10px 2px rgba(34, 60, 80, 0.2)
 
   &__arrow
     position: absolute
     max-width: 32px
     max-height: 32px
-    top: calc(50% - 16px)
+    top: 50%
     z-index: 1000
     cursor: pointer
+    transform: translateY(-50%)
     &:before
       content: url("data:image/svg+xml,%3C%3Fxml version='1.0' standalone='no'%3F%3E%3C!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 20010904//EN' 'http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd'%3E%3Csvg version='1.0' xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 832.000000 1280.000000' preserveAspectRatio='xMidYMid meet'%3E%3Cmetadata%3E%0ACreated by potrace 1.15, written by Peter Selinger 2001-2017%0A%3C/metadata%3E%3Cg transform='translate(0.000000,1280.000000) scale(0.100000,-0.100000)'%0Afill='%23968080' stroke='none'%3E%3Cpath d='M6285 12787 c-22 -8 -53 -21 -70 -30 -16 -8 -1412 -1399 -3101 -3089%0A-2773 -2774 -3073 -3078 -3090 -3123 -12 -32 -19 -76 -19 -120 1 -142 -282%0A153 3146 -3279 2625 -2627 3102 -3100 3144 -3118 70 -31 180 -31 251 0 42 19%0A187 160 891 865 935 937 878 871 878 1013 0 59 -5 80 -30 128 -25 47 -325 352%0A-1770 1799 -957 958 -1929 1932 -2160 2164 l-420 423 2146 2147 c2384 2386%0A2192 2182 2192 2324 0 137 43 87 -891 1020 -660 659 -847 841 -885 859 -59 27%0A-156 35 -212 17z'/%3E%3C/g%3E%3C/svg%3E%0A")
   &__next
-    transform: rotateY(180deg)
+    transform: translateY(-50%) rotateY(180deg)
     right: 0
   &__prev
     left: 0
 
-.reviewsSwiper__arrow.swiper-button-disabled
-  &:before
-    content: url("data:image/svg+xml,%3C%3Fxml version='1.0' standalone='no'%3F%3E%3C!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 20010904//EN' 'http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd'%3E%3Csvg version='1.0' xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 832.000000 1280.000000' preserveAspectRatio='xMidYMid meet'%3E%3Cmetadata%3E%0ACreated by potrace 1.15, written by Peter Selinger 2001-2017%0A%3C/metadata%3E%3Cg transform='translate(0.000000,1280.000000) scale(0.100000,-0.100000)'%0Afill='gray' stroke='none'%3E%3Cpath d='M6285 12787 c-22 -8 -53 -21 -70 -30 -16 -8 -1412 -1399 -3101 -3089%0A-2773 -2774 -3073 -3078 -3090 -3123 -12 -32 -19 -76 -19 -120 1 -142 -282%0A153 3146 -3279 2625 -2627 3102 -3100 3144 -3118 70 -31 180 -31 251 0 42 19%0A187 160 891 865 935 937 878 871 878 1013 0 59 -5 80 -30 128 -25 47 -325 352%0A-1770 1799 -957 958 -1929 1932 -2160 2164 l-420 423 2146 2147 c2384 2386%0A2192 2182 2192 2324 0 137 43 87 -891 1020 -660 659 -847 841 -885 859 -59 27%0A-156 35 -212 17z'/%3E%3C/g%3E%3C/svg%3E%0A")
+  &__arrow.swiper-button-disabled
+    &:before
+      content: url("data:image/svg+xml,%3C%3Fxml version='1.0' standalone='no'%3F%3E%3C!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 20010904//EN' 'http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd'%3E%3Csvg version='1.0' xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 832.000000 1280.000000' preserveAspectRatio='xMidYMid meet'%3E%3Cmetadata%3E%0ACreated by potrace 1.15, written by Peter Selinger 2001-2017%0A%3C/metadata%3E%3Cg transform='translate(0.000000,1280.000000) scale(0.100000,-0.100000)'%0Afill='gray' stroke='none'%3E%3Cpath d='M6285 12787 c-22 -8 -53 -21 -70 -30 -16 -8 -1412 -1399 -3101 -3089%0A-2773 -2774 -3073 -3078 -3090 -3123 -12 -32 -19 -76 -19 -120 1 -142 -282%0A153 3146 -3279 2625 -2627 3102 -3100 3144 -3118 70 -31 180 -31 251 0 42 19%0A187 160 891 865 935 937 878 871 878 1013 0 59 -5 80 -30 128 -25 47 -325 352%0A-1770 1799 -957 958 -1929 1932 -2160 2164 l-420 423 2146 2147 c2384 2386%0A2192 2182 2192 2324 0 137 43 87 -891 1020 -660 659 -847 841 -885 859 -59 27%0A-156 35 -212 17z'/%3E%3C/g%3E%3C/svg%3E%0A")
 
-.reviewsSwiper__pagination .swiper-pagination-bullet
-  width: 6px
-  height: 6px
+  &__pagination .swiper-pagination-bullet
+    width: 6px
+    height: 6px
+  &__pagination .swiper-pagination-bullet-active
+    background: #968080
 
-.reviewsSwiper__pagination .swiper-pagination-bullet-active
-  background: #968080
+
+
+
+
+

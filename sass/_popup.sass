@@ -1,0 +1,47 @@
+.popup
+  position: fixed
+  visibility: hidden
+  opacity: 0
+  width: 100%
+  height: 100%
+  top: -100%
+  z-index: -9999
+  transition-property: opacity, z-index, visibility, top
+  transition-duration: .5s
+  transition-timing-function: ease
+  background-color: rgba(0,0,0,.5)
+  &_open
+    opacity: 1
+    visibility: visible
+    z-index: 9999
+    transition-property: opacity, z-index, visibility, top
+    transition-duration: .5s
+    transition-timing-function: ease
+    top: 0
+  &__callBody
+    display: flex
+    position: relative
+    border-radius: 16px
+    top: 50%
+    left: calc(50% + 80px)
+    transform: translate(-50%, -50%)
+    background-color: red
+    max-width: 500px
+    max-height: 500px
+  &__callContent
+    padding: 80px
+  &__callClose
+    position: absolute
+    cursor: pointer
+    right: 0
+    top: 0
+
+.up
+  position: fixed
+  bottom: 50px
+  left: 120px
+  width: 65px
+
+
+
+
