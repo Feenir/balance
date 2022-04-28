@@ -98,3 +98,27 @@ let elements = document.querySelectorAll('.six-hidden');
 for (let elm of elements) {
     observer.observe(elm);
 }
+/* ==============================================
+** Показать 6 причин при клике
+============================================== */
+$('.js-tab-trigger').click(function() {
+    var id = $(this).attr('data-tab'),
+        content = $('.js-tab-content[data-tab="'+ id +'"]');
+
+    $('.js-tab-trigger.active').removeClass('active'); // 1
+    $(this).addClass('active'); // 2
+
+    $('.js-tab-content.active').removeClass('active'); // 3
+    content.addClass('active'); // 4
+});
+
+/* ==============================================
+** увелиечение видеоролика fancybox на главном экране
+============================================== */
+$('.js-fancybox-video').fancybox({
+    openEffect: 'none',
+    closeEffect: 'none',
+    helpers: {
+        media: {}
+    }
+});

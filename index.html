@@ -7,6 +7,7 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<link rel="stylesheet" href="/fancybox/jquery.fancybox-1.3.4.css" type="text/css" media="screen"/>
 	<link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
+	<link rel="stylesheet" href="css/fancybox.css">
 	<link rel="stylesheet" href="css/style.css">
 	<title>balanse-expert.ru</title>
 </head>
@@ -38,11 +39,17 @@
 			<img src="img/balance.png" alt="Лого">
 		</a>
 		<ul class="header__list">
-			<li class="header__items"><a href="#">accountant@balanse-expert.ru</a></li>
-			<li class="header__items"><a href="#">+7 (495) 790-04-42</a></li>
-			<li class="header__items"><a href="#"><span>БЦ Сириус парк Москва</span></a></li>
+			<li class="header__items"><a href="tel:74957900442">+7 (495) 790-04-42</a></li>
+			<li class="header__items"><a href="#">г.Москва, БЦ Сириус парк Москва
+				<span>Посмотреть на карте</span></a>
+			</li>
+			<li class="header__items"><a href="mailto:accountant@balanse-expert.ru">accountant@balanse-expert.ru</a></li>
 		</ul>
-		<button type="button" class="button header__button js-call_open">Заказать звонок</button>
+			<div class="header__callback">
+				<a href="tel:+79128144441">+7 (912) 814-44-41</a>
+				<button type="button" class="button header__button js-call_open">
+					Обратный звонок</button>
+			</div>
 	</div>
 </header>
 
@@ -51,7 +58,7 @@
 		<h1 class="hero__title">Бухгалтерское Обслуживание</h1>
 		<p class="hero__text">Качественный аутсорсинг от команды аттестованных <strong>профессиональных бухгалтеров</strong>
 			ИПБ России и членов Палаты налоговых консультантов.
-			Вы занимаетесь бизнесом, мы — Вашей бухгалтерией.</p>
+			<span>Вы занимаетесь бизнесом, мы — Вашей бухгалтерией.</span></p>
 		<div class="hero__buttonsLink">
 			<a href="#" class="hero__link">Получить аудит бесплатно</a>
 		</div>
@@ -105,6 +112,7 @@
 					<p>Погружаемся в деятельность организации, отслеживаем недостающие документы и сигнализируем.</p>
 				</div>
 			</div>
+			
 			<div class="we__blockCenter">
 				<div class="we__blockFront we__blockBrown">
 					<span class="we__number">IV</span>
@@ -114,6 +122,7 @@
 					<p>Мы-проверяем контрагентов на благонадежность, вы - спокойны за свою репутацию.</p>
 				</div>
 			</div>
+			
 			<div class="we__blockCenter">
 				<div class="we__blockFront we__blockGray">
 					<span class="we__number">V</span>
@@ -122,22 +131,25 @@
 					<p>внедряем все возможные способы законного снижения налогов</p>
 				</div>
 			</div>
+			
 			<div class="we__blockCenter">
-				<div class="we__blockFront we__blockGray">
+				<div class="we__blockFront we__blockBrown">
 					<span class="we__number">VI</span>
-					<p>Простое общение и всесторонняя поддержка.</p></div>
-				<div class="we__blockBack we__blockGray">
+					<p>Простое общение и всесторонняя поддержка.</p>
+					<span class="we__backBlock we__backBlock-print"></span></div>
+				<div class="we__blockBack  we__blockBrown">
 					<p class="we__textSmall">Говорим на понятном языке, будем общаться там где Вам удобно:личный
 						кабинет,телефон,Whatsapp,Telegram,email.
 					</p>
 				</div>
 			</div>
+			
 			<div class="we__blockCenter">
-				<div class="we__blockFront we__blockBrown">
+				<div class="we__blockFront we__blockGray">
 					<span class="we__number">VII</span>
 					<p>Фиксируем цены на обслуживание.</p>
-					<span class="we__backBlock we__backBlock-print"></span></div>
-				<div class="we__blockBack we__blockBrown">
+					</div>
+				<div class="we__blockBack we__blockGray">
 					<p>У нас нет скрытых ежемесячных доплат, оплата только за работу.</p>
 				</div>
 			</div>
@@ -508,7 +520,9 @@
 		<h2 class="quiz__title title_color">Расчет стоимости услуг</h2>
 		<p class="quiz__text text_color">Ответьте на 6 вопросов и получите первый месяц бухгалтерского сопровождения со
 			СКИДКОЙ 100%</p>
-		<div class="quiz__markQuiz"></div>
+		<div class="quiz__markQuiz">
+			<div data-marquiz-id="6256979d61cca8003f3237ac"></div>
+		</div>
 	</div>
 </section>
 
@@ -516,14 +530,12 @@
 	<div class="container about__wrapper">
 		<div class="about__block">
 			<h3 class="about__title title_color">ОБ АГЕНСТВЕ</h3>
-			<p class="about__text">Бухгалтерское агенство Баланс Эксперт специализируется на комплексном бухгалтерском
-				сопровождении и сопутсвующих юридических услугах для предпринимателей и организаций малого,среднего бизнеса.
-				Готовы полностью заменить и взять на себя функции штатного бухгалтера и кадрового сотрудника.</p>
-			<p class="about__text">Внедряем новые технологии, чтобы работать быстрее и эффективнее. Облачные 1С, электронный
-				документооборот, распознавание документов по сканам, доработка 1С под потребности клиента, удобный личный
-				кабинет 24/7 — это давно наша действительность.</p>
-			<a href="#" class="about__link">
-				
+			<p class="about__text">Бухгалтерское агенство Баланс Эксперт специализируется на комплексном бухгалтерском сопровождении и сопутсвующих юридических услугах для предпринимателей и организаций малого,среднего бизнеса. Готовы полностью заменить и взять на себя функции штатного бухгалтера и кадрового сотрудника.</p>
+			<p class="about__text">Внедряем новые технологии, чтобы работать быстрее и эффективнее. Облачные 1С, электронный документооборот, распознавание документов по сканам, доработка 1С под потребности клиента, удобный личный кабинет 24/7 - это давно наша действительность.</p>
+			<p class="about__text">Сотрудники агентства ежедневно отслеживают новости бухгалтерского и налогового учета, вкурсе всех последних изменений  Законодательства, ежемесячно проходят обучение и повышают квалификацию.</p>
+			<p class="about__text">Наша профессиональная ответственность полностью застрахована на 1 000 000 руб.</p>
+			<p class="about__text">Ведем бухгалтерский учет ИП,ООО,АО в различных сферах бизнеса таких как торговля, услуги, строительство, производство, интернет-магазины и другие, ведем АНО и НКО. </p>
+			<a href="https://www.youtube.com/watch?v=fC_sJAsac2M&t=2s" class="js-fancybox-video about__link" data-rel="media">
 				Узнайте о нашей компании всего за 60 секунд</a>
 		</div>
 		<div class="about__block">
@@ -563,9 +575,43 @@
 			<h2 class="price__title title_color">Стоимость и оплата услуг</h2>
 			<p class="price__textMain">Качественный аутсорсинг от команды аттестованных профессиональных бухгалтеров ИПБ
 				России и членов Палаты налоговых консультантов. </p>
-			<div class="price__itemLink">
-				<a href="#" class="price__link">Смотреть прайс</a>
-				<a href="#" class="price__link">Запросить счёт</a>
+			<ul class="price__itemLink">
+				<li class="price__link js-tab-trigger active" data-tab="1">Что входит в стандартную бухгалтерскую услугу?</li>
+				<li class="price__link js-tab-trigger" data-tab="2">Кому подходит бухгалтерский аутсорсинг?</li>
+				<li class="price__link js-tab-trigger" data-tab="3">Преимущества аутсорсинга и специалиста в штате ?</li>
+			</ul>
+			
+			<div class="price__tabsWrapper">
+				<div data-tab="1" class="price__tabs price__tabs_one js-tab-content active">
+					<h4>Что входит в стандартную бухгалтерскую услугу?</h4>
+					<ul>
+						<li>-прием, регистрация и учет первичных документов</li>
+						<li>-ведение бухгалтерского и налогового учета в программе 1С</li>
+						<li>-ведение бухгалтерского и налогового учета в программе 1С</li>
+						<li>-ведение бухгалтерского и налогового учета в программе 1С</li>
+						<li>-ведение бухгалтерского и налогового учета в программе 1С</li>
+					</ul>
+				</div>
+				<div data-tab="2" class="price__tabs price__tabs_two js-tab-content">
+					<h4>Что входит в стандартную </h4>
+					<ul>
+						<li>-прием, регистрация и учет первичных документов</li>
+						<li>-ведение бухгалтерского и налогового учета в программе 1С</li>
+						<li>-ведение бухгалтерского и налогового учета в программе 1С</li>
+						<li>-ведение бухгалтерского и налогового учета в программе 1С</li>
+						<li>-ведение бухгалтерского и налогового учета в программе 1С</li>
+					</ul>
+				</div>
+				<div data-tab="3" class="price__tabs price__tabs_tree js-tab-content">
+					<h4>Что входит </h4>
+					<ul>
+						<li>-прием, регистрация и учет первичных документов</li>
+						<li>-ведение бухгалтерского и налогового учета в программе 1С</li>
+						<li>-ведение бухгалтерского и налогового учета в программе 1С</li>
+						<li>-ведение бухгалтерского и налогового учета в программе 1С</li>
+						<li>-ведение бухгалтерского и налогового учета в программе 1С</li>
+					</ul>
+				</div>
 			</div>
 		</div>
 		
@@ -575,7 +621,6 @@
 			</p>
 			<div class="price__articlesBlock">
 				<a href="#" class="price__articlesItems">
-					<p class="price__articlesItems-text">полезные статьи</p>
 					<h5 class="price__articlesItems-title">Как работать с маркетплейсами?</h5>
 					<div class="price__articlesItems-dateBlock">
 						<span class="price__articlesItems-number">10</span>
@@ -583,7 +628,6 @@
 					</div>
 				</a>
 				<a href="#" class="price__articlesItems">
-					<p class="price__articlesItems-text">полезные статьи</p>
 					<h5 class="price__articlesItems-title">Как работать с маркетплейсами?</h5>
 					<div class="price__articlesItems-dateBlock">
 						<span class="price__articlesItems-number">10</span>
@@ -591,7 +635,6 @@
 					</div>
 				</a>
 				<a href="#" class="price__articlesItems">
-					<p class="price__articlesItems-text">полезные статьи</p>
 					<h5 class="price__articlesItems-title">Как работать с маркетплейсами?</h5>
 					<div class="price__articlesItems-dateBlock">
 						<span class="price__articlesItems-number">10</span>
@@ -615,51 +658,67 @@
 					</a>
 				</div>
 				<div class="swiper-slide reviewsSwiper__slide">
-					<a href="#">
+					<a href="img/reviews/reviews1.jpeg" data-fancybox="images" data-caption="My caption">
 						<img src="img/reviews/reviews1.jpeg" alt="Письмо благодарности">
 					</a>
 				</div>
 				<div class="swiper-slide reviewsSwiper__slide">
-					<a href="#">
+					<a href="img/reviews/reviews1.jpeg" data-fancybox="images" data-caption="My caption">
 						<img src="img/reviews/reviews1.jpeg" alt="Письмо благодарности">
 					</a>
 				</div>
 				<div class="swiper-slide reviewsSwiper__slide">
-					<a href="#">
+					<a href="img/reviews/reviews1.jpeg" data-fancybox="images" data-caption="My caption">
 						<img src="img/reviews/reviews1.jpeg" alt="Письмо благодарности">
 					</a>
 				</div>
 				<div class="swiper-slide reviewsSwiper__slide">
-					<a href="#">
+					<a href="img/reviews/reviews1.jpeg" data-fancybox="images" data-caption="My caption">
 						<img src="img/reviews/reviews1.jpeg" alt="Письмо благодарности">
 					</a>
 				</div>
 				<div class="swiper-slide reviewsSwiper__slide">
-					<a href="#">
+					<a href="img/reviews/reviews1.jpeg" data-fancybox="images" data-caption="My caption">
 						<img src="img/reviews/reviews1.jpeg" alt="Письмо благодарности">
 					</a>
 				</div>
 				<div class="swiper-slide reviewsSwiper__slide">
-					<a href="#">
+					<a href="img/reviews/reviews1.jpeg" data-fancybox="images" data-caption="My caption">
 						<img src="img/reviews/reviews1.jpeg" alt="Письмо благодарности">
 					</a>
 				</div>
 				<div class="swiper-slide reviewsSwiper__slide">
-					<a href="#">
+					<a href="img/reviews/reviews1.jpeg" data-fancybox="images" data-caption="My caption">
 						<img src="img/reviews/reviews1.jpeg" alt="Письмо благодарности">
 					</a>
 				</div>
 				<div class="swiper-slide reviewsSwiper__slide">
-					<a href="#">
+					<a href="img/reviews/reviews1.jpeg" data-fancybox="images" data-caption="My caption">
 						<img src="img/reviews/reviews1.jpeg" alt="Письмо благодарности">
 					</a>
 				</div>
 				<div class="swiper-slide reviewsSwiper__slide">
-					<a href="#">
+					<a href="img/reviews/reviews1.jpeg" data-fancybox="images" data-caption="My caption">
+						<img src="img/reviews/reviews1.jpeg" alt="Письмо благодарности">
+					</a>
+				</div>
+				<div class="swiper-slide reviewsSwiper__slide">
+					<a href="img/reviews/reviews1.jpeg" data-fancybox="images" data-caption="My caption">
+						<img src="img/reviews/reviews1.jpeg" alt="Письмо благодарности">
+					</a>
+				</div>
+				<div class="swiper-slide reviewsSwiper__slide">
+					<a href="img/reviews/reviews1.jpeg" data-fancybox="images" data-caption="My caption">
+						<img src="img/reviews/reviews1.jpeg" alt="Письмо благодарности">
+					</a>
+				</div>
+				<div class="swiper-slide reviewsSwiper__slide">
+					<a href="img/reviews/reviews1.jpeg" data-fancybox="images" data-caption="My caption">
 						<img src="img/reviews/reviews1.jpeg" alt="Письмо благодарности">
 					</a>
 				</div>
 			</div>
+			
 			<div class="reviewsSwiper__arrow reviewsSwiper__next"></div>
 			<div class="reviewsSwiper__arrow reviewsSwiper__prev"></div>
 			<div class="swiper-pagination reviewsSwiper__pagination"></div>
@@ -668,7 +727,28 @@
 </section>
 
 <footer class="footer" id="footer">
-	<div class="container footer__wrapper"></div>
+	<div class="container footer__wrapper">
+		<div class="footer__top">
+			<div class="footer__topBlock">
+				<p> БЦ Сириус парк Москва, Каширское ш., д.3, корп. 2, стр. 2</p>
+				<p>ИП Богачева Анастасия Игоревна</p>
+				<p>ИНН 712600577504</p>
+				<p>ОГРНИП 319715400000341</p>
+			</div>
+			<div class="footer__topBlock">
+				<h4>Контакты</h4>
+				<a href="">+7 (495) 790-04-42</a>
+				<a href="">accountant@balanse-expert.ru</a>
+			</div>
+		</div>
+		<div class="footer__bottom">
+			<p>Все права сайта защищены2022©</p>
+			<div>
+				<a href="#">Пользовательское Соглашение</a>
+				<a href="#">Разработка сайта</a>
+			</div>
+		</div>
+	</div>
 	<div class="border_top">
 		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" preserveAspectRatio="none">
 			<path class="elementor-shape-fill"
@@ -715,8 +795,8 @@
 </div>
 
 <script src="js/jquery.js"></script>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
 <script type="text/javascript" src="/fancybox/jquery.fancybox-1.3.4.pack.js"></script>
+<script src="js/fancybox.js"></script>
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 <script src="js/main.js"></script>
 

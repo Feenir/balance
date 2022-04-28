@@ -20,16 +20,17 @@
     align-items: center
     color: #C4C4C4
     & a
+      font-size: 14px
       color: inherit
     &:not(:last-child)
       margin-right: 50px
-      &:before
-        content: ''
-        width: 30px
-        height: 2.5px
-        background-color: #B08F7C
-        margin-right: 15px
-    &:last-child
+    &:nth-child(2)
+      display: flex
+      align-items: center
+      & a
+        display: flex
+        flex-direction: column
+        align-items: flex-end
       &:before
         content: ''
         width: 30px
@@ -39,10 +40,21 @@
         background-size: cover
         border-radius: 50%
         margin-right: 15px
+    &:not(:nth-child(2))
+      &:before
+        content: ''
+        width: 30px
+        height: 2.5px
+        background-color: #B08F7C
+        margin-right: 15px
 
-
-
-
+  &__callback
+    display: flex
+    flex-direction: column
+    align-items: center
+    & a
+      margin-bottom: 10px
+      color: #B08F7C
   &__button
     display: flex
     align-items: center
