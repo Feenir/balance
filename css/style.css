@@ -3,7 +3,7 @@
   font-style: normal;
   font-family: "TD-Neumann";
   font-display: swap;
-    font-display-src: url("../fonts/td-neumann-webfont.woff2") format("woff2"), url("../fonts/td-neumann-webfont.woff") format("woff"); }
+    font-display-src: url("../fonts/Neumann.woff") format("woff"); }
 @font-face {
   font-weight: 400;
   font-style: normal;
@@ -162,14 +162,14 @@ button {
       color: inherit; }
     .header__items:not(:last-child) {
       margin-right: 50px; }
-    .header__items:nth-child(2) {
+    .header__items:first-child {
       display: flex;
       align-items: center; }
-      .header__items:nth-child(2) a {
+      .header__items:first-child a {
         display: flex;
         flex-direction: column;
         align-items: flex-end; }
-      .header__items:nth-child(2):before {
+      .header__items:first-child:before {
         content: "";
         width: 30px;
         height: 30px;
@@ -178,7 +178,7 @@ button {
         background-size: cover;
         border-radius: 50%;
         margin-right: 15px; }
-    .header__items:not(:nth-child(2)):before {
+    .header__items:not(:first-child):before {
       content: "";
       width: 30px;
       height: 2.5px;
@@ -280,6 +280,14 @@ button {
     border: 2px solid #AF8E7B;
     border-radius: 25px;
     padding: 10px 15px; }
+  .hero__list {
+    padding-top: 50px;
+    color: white;
+    padding-left: 15px; }
+    .hero__list li {
+      font-weight: bold;
+      font-size: 16px;
+      list-style: inherit; }
 
 .we {
   margin-bottom: 100px; }
@@ -606,11 +614,23 @@ button {
     background-image: linear-gradient(180deg, #776154 0%, #B08F7C 100%);
     border-radius: 25px; }
 .price__tabsWrapper {
-  display: none; }
+  width: 100%; }
 .price__tabs {
   display: none; }
   .price__tabs.active {
     display: flex; }
+.price__tabsList {
+  margin-top: 40px;
+  padding: 40px;
+  border: 1px solid #B08F7C;
+  border-radius: 16px;
+  width: 100%; }
+.price__tabsItems {
+  font-size: 14px;
+  color: #616161;
+  line-height: 17px; }
+  .price__tabsItems:not(:last-child) {
+    margin-bottom: 10px; }
 .price__articles {
   display: flex;
   flex-direction: column;
