@@ -75,29 +75,31 @@ $('a[href*="#"]').click(function() {
 ============================================== */
 
 
-$('.js-six').click(function(e) {
-    e.preventDefault();
-    $(this).children('.js-six_show').toggleClass('show')
-    $(this).children('.six__plusImg').toggleClass('rotate')
-});
+// $('.js-six').click(function(e) {
+//     e.preventDefault();
+//     $(this).children('.js-six_show').toggleClass('show')
+//     $(this).children('.six__plusImg').toggleClass('rotate')
+// });
 
-
-function onEntry(entry) {
-    entry.forEach(change => {
-        if (change.isIntersecting) {
-            change.target.classList.add('six-visible');
-        }
-    });
-}
-
-let options = {
-    threshold: [0.5] };
-let observer = new IntersectionObserver(onEntry, options);
-let elements = document.querySelectorAll('.six-hidden');
-
-for (let elm of elements) {
-    observer.observe(elm);
-}
+/* ==============================================
+** Показать 6 причин при Скроле
+============================================== */
+// function onEntry(entry) {
+//     entry.forEach(change => {
+//         if (change.isIntersecting) {
+//             change.target.classList.add('six-visible');
+//         }
+//     });
+// }
+//
+// let options = {
+//     threshold: [0.5] };
+// let observer = new IntersectionObserver(onEntry, options);
+// let elements = document.querySelectorAll('.six-hidden');
+//
+// for (let elm of elements) {
+//     observer.observe(elm);
+// }
 /* ==============================================
 ** Показать 6 причин при клике
 ============================================== */

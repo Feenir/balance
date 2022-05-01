@@ -1,15 +1,15 @@
 .popup
   position: fixed
   visibility: hidden
+  top: -100%
+  z-index: -9999
   opacity: 0
   width: 100%
   height: 100%
-  top: -100%
-  z-index: -9999
   transition-property: opacity, z-index, visibility, top
   transition-duration: .5s
   transition-timing-function: ease
-  background-color: rgba(0,0,0,.5)
+  background-color: rgba(0,0,0,.4)
   &_open
     opacity: 1
     visibility: visible
@@ -20,21 +20,88 @@
     top: 0
   &__callBody
     display: flex
+    align-items: center
+    justify-content: center
     position: relative
     border-radius: 16px
     top: 50%
+    padding: 40px
     left: calc(50% + 80px)
     transform: translate(-50%, -50%)
-    background-color: red
-    max-width: 500px
-    max-height: 500px
+    background-color: #252525
+    max-width: 340px
+    max-height: 560px
   &__callContent
-    padding: 80px
+    display: flex
+    align-content: center
+    justify-content: center
+    text-align: center
+    flex-direction: column
+
+  &__title
+    font-size: 44px
+    color: white
+    margin-bottom: 10px
+    & span
+      color: #AF8E7B
+
+  &__textBody
+    color: white
+    margin-bottom: 20px
+    padding: 0 15px
+
+  &__form
+    display: inline-flex
+    flex-direction: column
+    z-index: 100
+
   &__callClose
     position: absolute
     cursor: pointer
-    right: 0
-    top: 0
+    right: -40px
+    top: -30px
+    & svg
+      background-color: #AF8E7B
+      border: 2px solid #AF8E7B
+      border-radius: 50%
+  &__userBlock
+    display: flex
+    align-items: center
+    flex-direction: column
+    & label
+      display: flex
+      width: 100%
+      &:not(:last-child)
+        margin-bottom: 20px
+    & input
+      width: 100%
+      font-size: 16px
+      padding: 15px
+      border: 1px solid #AF8E7B
+      border-radius: 25px
+      color: #AF8E7B
+      &::placeholder
+        transition: opacity .5s ease
+        opacity: 1
+        color: #AF8E7B
+      &:focus::placeholder
+        opacity: 0
+
+  &__button
+    display: flex
+    align-items: center
+    justify-content: center
+    padding: 15px
+    margin-top: 25px
+    border: 1px solid #AF8E7B
+    color: #AF8E7B
+    border-radius: 25px
+    transition-property: color, background
+    transition-timing-function: ease
+    transition-duration: .5s
+    &:hover
+      background-color: #AF8E7B
+      color: #ffffff
 
 .up
   position: fixed
