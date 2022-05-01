@@ -37,6 +37,9 @@ input {
   max-width: 1210px;
   margin: 0 auto;
   padding-left: 80px; }
+  @media (max-width: 1340px) {
+    .container {
+      padding: 0 15px 0 95px; } }
 
 li[class] {
   list-style: none; }
@@ -509,8 +512,10 @@ button {
     font-size: 12px; }
     .six__rightWord:not(:last-child), .six__leftWord:not(:last-child) {
       margin-bottom: 10px; }
-  .six__plusImg svg {
-    border-radius: 0 6px 6px 0; }
+  .six__plusImg {
+    display: flex; }
+    .six__plusImg svg {
+      border-radius: 0 6px 6px 0; }
 
 .six__leftItems:hover .six__plusImg svg {
   background-color: #80685A; }
