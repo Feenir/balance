@@ -32,15 +32,14 @@
     background-position: 40px
   &__leftWrapper
     position: absolute
-    left: 0
+    left: -25%
     transition-property: opacity, left
     transition-delay: .6s
     transition-timing-function: ease
     transition-duration: 2s
-    opacity: 1
+    opacity: 0
   &__leftList, &__rightList
     position: absolute
-    z-index: -10
     opacity: 0
     pointer-events: none
     min-width: 450px
@@ -48,60 +47,57 @@
     background: radial-gradient(52.81% 52.81% at 21.91% 39.89%, #A98976 0%, #80685A 100%)
   &__leftList
     right: 0
-    top: -16px
+    top: -13px
     border-radius: 12px 0 12px 12px
   &__rightList
     left: 0
-    top: -16px
+    top: -13px
     border-radius: 0 12px 12px 12px
 
   &__rightItems,  &__leftItems
+    display: flex
+    align-items: center
     position: relative
     color: white
     font-size: 20px
-    z-index: 200
     cursor: pointer
 
   &__leftItems
-    display: flex
-    align-items: center
     &-popup
       $popupWidht: 200px
       width: $popupWidht
       left: -$popupWidht
       position: absolute
+      z-index: 10
     &:first-child
       top: 0
       left: 130px
-      z-index: 101
     &:nth-child(2)
       top: 100px
       right: -105px
-      z-index: 102
     &:nth-child(3)
       top: 200px
       right: -80px
-      z-index: 103
     &:nth-child(4)
       top: 305px
       right: -55px
-      z-index: 104
   &__rightWrapper
     position: absolute
-    right: 0
+    right: -25%
     transition-property: opacity, right
     transition-delay: .6s
     transition-timing-function: ease
     transition-duration: 2s
-    opacity: 1
+    opacity: 0
+    @media (max-width: 768px)
+      right: -10vw
   &__rightItems
-    display: flex
-    align-items: center
     &-popup
       $popupWidht: 200px
       width: $popupWidht
       right: -$popupWidht
       position: absolute
+      z-index: 10
     &:first-child
       top: 0
       right: 130px
@@ -120,24 +116,35 @@
       margin-bottom: 10px
   &__plusImg
     display: flex
-    & svg
-      border-radius: 0 6px 6px 0
+    z-index: 9
 
-.six__leftItems:hover .six__plusImg svg
+.six__leftItems:hover .six__plusImg
   background-color: #80685A
+  border-radius: 0 6px 6px 0
 
-.six__rightItems:hover .six__plusImg svg
+.six__rightItems:hover .six__plusImg
   background-color: #80685A
   border-radius: 6px 0 0 6px
 
+.six__leftItems:hover .six__plusImg svg
+  transform: rotate(45deg)
+
+.six__rightItems:hover .six__plusImg svg
+
+  transform: rotate(45deg)
+
+.six__rightItems:hover .six__plusImg svg rect
+  stroke: #80685A
+
+.six__leftItems:hover .six__plusImg svg rect
+  stroke: #80685A
+
 .six__leftItems:hover .six__leftList
   opacity: 1
-  z-index: 100
   pointer-events: auto
 
 .six__rightItems:hover .six__rightList
   opacity: 1
-  z-index: 100
   pointer-events: auto
 
 .six-visible

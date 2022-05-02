@@ -14,6 +14,8 @@
     align-items: stretch
     column-gap: 20px
     flex-wrap: wrap
+    @media (max-width: 991px)
+      justify-content: flex-start
 
   &__blockCenter
     display: flex
@@ -28,10 +30,22 @@
     cursor: pointer
     transition: all .5s ease
     border-radius: 15px
+    @media (max-width: 991px)
+      width: calc(50% - 16px)
+      max-width: 50%
+      margin-bottom: 30px
+    @media (max-width: 560px)
+      width: 100%
+      max-width: 100%
     &:nth-child(2), &:nth-child(4)
       top: 30px
+      @media (max-width: 560px)
+        top: auto
     &:nth-child(6)
       bottom: 30px
+      @media (max-width: 991px)
+        top: 30px
+        bottom: auto
   &__blockFront, &__blockBack
     position: absolute
     display: flex
