@@ -1,7 +1,7 @@
 .popup
   position: fixed
   visibility: hidden
-  top: -100%
+  top: 0
   z-index: -9999
   opacity: 0
   width: 100%
@@ -18,19 +18,25 @@
     transition-duration: .5s
     transition-timing-function: ease
     top: 0
+    & .popup__callBody
+      top: 50%
   &__callBody
     display: flex
     align-items: center
     justify-content: center
     position: relative
     border-radius: 16px
-    top: 50%
+    top: -150%
     padding: 40px
     left: calc(50% + 80px)
     transform: translate(-50%, -50%)
     background-color: #252525
     max-width: 340px
     max-height: 560px
+    transition-property: opacity, z-index, visibility, top
+    transition-duration: .5s
+    transition-timing-function: ease
+
   &__callContent
     display: flex
     align-content: center

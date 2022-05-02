@@ -85,22 +85,25 @@ $('a[href*="#"]').click(function() {
 /* ==============================================
 ** Показать 6 причин при Скроле
 ============================================== */
-function onEntry(entry) {
-    entry.forEach(change => {
-        if (change.isIntersecting) {
-            change.target.classList.add('six-visible');
-        }
-    });
-}
+// function onEntry(entry) {
+//     entry.forEach(change => {
+//         if (change.isIntersecting) {
+//             change.target.classList.add('six-visible');
+//         }
+//     });
+// }
+//
+// let options = {
+//     threshold: [0.5] };
+// let observer = new IntersectionObserver(onEntry, options);
+// let elements = document.querySelectorAll('.six-hidden');
+//
+// for (let elm of elements) {
+//     observer.observe(elm);
+// }
 
-let options = {
-    threshold: [0.5] };
-let observer = new IntersectionObserver(onEntry, options);
-let elements = document.querySelectorAll('.six-hidden');
 
-for (let elm of elements) {
-    observer.observe(elm);
-}
+
 /* ==============================================
 ** Показать 6 причин при клике
 ============================================== */

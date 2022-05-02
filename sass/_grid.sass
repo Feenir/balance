@@ -52,6 +52,8 @@ input
   padding-left: 80px
   @media (max-width: 1340px)
     padding: 0 15px 0 95px
+  @media (max-width: 768px)
+    padding: 0 15px
 
 li[class]
     list-style: none
@@ -97,6 +99,8 @@ button
   width: calc(100% - 80px)
   transform: rotate(180deg)
   right: 0
+  @media (max-width: 768px)
+    width: 100%
   & svg
     width: 100%
     & path
@@ -110,6 +114,8 @@ button
   height: 35px
   width: calc(100% - 80px)
   transform: rotate(180deg)
+  @media (max-width: 768px)
+    width: 100%
   & svg
     width: 100%
     & path
@@ -117,8 +123,9 @@ button
 
 @keyframes video
   0%
-    top: 23%
+    top: 0
   50%
-    top: 13%
+    top: 50%
   100%
-    top: 23%
+    top: 0
+

@@ -30,27 +30,43 @@
     background-repeat: no-repeat
     background-size: cover
     background-position: 40px
+    @media (max-width: 991px)
+      display: flex
+      flex-direction: column
+      background-size: contain
+      background-position: bottom center
+      min-width: 100%
   &__leftWrapper
     position: absolute
-    left: -25%
+    left: 0
     transition-property: opacity, left
     transition-delay: .6s
     transition-timing-function: ease
     transition-duration: 2s
-    opacity: 0
+    opacity: 1
+    @media (max-width: 991px)
+      position: static
   &__leftList, &__rightList
     position: absolute
     opacity: 0
     pointer-events: none
-    min-width: 450px
+    max-width: 260px
     padding: 20px
     background: radial-gradient(52.81% 52.81% at 21.91% 39.89%, #A98976 0%, #80685A 100%)
+    transition: opacity .5s ease
+    z-index: 250
+    @media (max-width: 991px)
+      background: none
+      position: static
+      opacity: 1
+      max-width: 100%
   &__leftList
-    right: 0
+    right: -165px
     top: -13px
     border-radius: 12px 0 12px 12px
+
   &__rightList
-    left: 0
+    left: -165px
     top: -13px
     border-radius: 0 12px 12px 12px
 
@@ -61,43 +77,65 @@
     color: white
     font-size: 20px
     cursor: pointer
+    @media (max-width: 991px)
+      flex-direction: column
+      position: static
+      align-items: flex-start
 
   &__leftItems
     &-popup
-      $popupWidht: 200px
+      display: flex
+      align-items: center
+      $popupWidht: 350px
       width: $popupWidht
-      left: -$popupWidht
+      left: -$popupWidht - 10px
       position: absolute
       z-index: 10
+      justify-content: flex-end
+      & h5
+        z-index: -1
+        position: relative
+        margin-right: 10px
+      @media (max-width: 991px)
+        position: static
+        width: auto
+        order: 2
+
     &:first-child
       top: 0
-      left: 130px
+      left: 0
     &:nth-child(2)
       top: 100px
-      right: -105px
+      right: 140px
     &:nth-child(3)
       top: 200px
-      right: -80px
+      right: 120px
     &:nth-child(4)
       top: 305px
-      right: -55px
+      right: 100px
   &__rightWrapper
     position: absolute
-    right: -25%
+    right: 0
     transition-property: opacity, right
     transition-delay: .6s
     transition-timing-function: ease
     transition-duration: 2s
-    opacity: 0
-    @media (max-width: 768px)
-      right: -10vw
+    opacity: 1
+    @media (max-width: 991px)
+      position: static
   &__rightItems
     &-popup
-      $popupWidht: 200px
-      width: $popupWidht
-      right: -$popupWidht
+      display: flex
+      align-items: center
+      $popupRWidht: 350px
+      width: $popupRWidht
+      right: -$popupRWidht - 10px
       position: absolute
+
       z-index: 10
+      @media (max-width: 991px)
+        position: static
+        width: auto
     &:first-child
       top: 0
       right: 130px
@@ -121,6 +159,9 @@
 .six__leftItems:hover .six__plusImg
   background-color: #80685A
   border-radius: 0 6px 6px 0
+  @media (max-width: 991px)
+    background-color: inherit
+    border-radius: unset
 
 .six__rightItems:hover .six__plusImg
   background-color: #80685A
@@ -138,6 +179,13 @@
 
 .six__leftItems:hover .six__plusImg svg rect
   stroke: #80685A
+
+.six__leftItems:hover .six__leftItems-popup h5
+  opacity: 0
+
+
+.six__rightItems:hover .six__rightItems-popup > h5
+  opacity: 0
 
 .six__leftItems:hover .six__leftList
   opacity: 1
