@@ -28,179 +28,96 @@
     height: auto
     background-image: url("../img/six_img.webp")
     background-repeat: no-repeat
-    background-size: cover
-    background-position: 40px
+    background-size: contain
+    background-position: center
     @media (max-width: 991px)
       display: flex
       flex-direction: column
       background-size: contain
-      background-position: bottom center
+      background-position: bottom right
       min-width: 100%
-  &__leftWrapper
-    position: absolute
-    left: 0
-    transition-property: opacity, left
-    transition-delay: .6s
-    transition-timing-function: ease
-    transition-duration: 2s
-    opacity: 1
-    @media (max-width: 991px)
-      position: static
-  &__leftList, &__rightList
-    position: absolute
-    opacity: 0
-    pointer-events: none
-    max-width: 260px
-    padding: 20px
-    background: radial-gradient(52.81% 52.81% at 21.91% 39.89%, #A98976 0%, #80685A 100%)
-    transition: opacity .5s ease
-    z-index: 250
-    @media (max-width: 991px)
-      background: none
-      position: static
-      opacity: 1
-      max-width: 100%
-  &__leftList
-    right: -165px
-    top: -13px
-    border-radius: 12px 0 12px 12px
+    @media (max-width: 910px)
+      background-size: 450px
+      padding-bottom: 200px
 
-  &__rightList
-    left: -165px
-    top: -13px
-    border-radius: 0 12px 12px 12px
-
-  &__rightItems,  &__leftItems
+  &__popupWrapper
     display: flex
+    flex-wrap: wrap
+  &__popupItem
+    display: inline-flex
     align-items: center
+    width: 50%
+    justify-content: center
+    margin-bottom: 100px
     position: relative
-    color: white
-    font-size: 20px
     cursor: pointer
+    $second: 20px
+    $third: 40px
+    $four: 60px
     @media (max-width: 991px)
       flex-direction: column
       position: static
+      width: 100%
       align-items: flex-start
-
-  &__leftItems
-    &-popup
-      display: flex
-      align-items: center
-      $popupWidht: 350px
-      width: $popupWidht
-      left: -$popupWidht - 10px
-      position: absolute
-      z-index: 10
-      justify-content: flex-end
-      & h5
-        z-index: -1
-        position: relative
-        margin-right: 10px
-      @media (max-width: 991px)
-        position: static
-        width: auto
-        order: 2
-
-    &:first-child
-      top: 0
-      left: 0
-    &:nth-child(2)
-      top: 100px
-      right: 140px
+      margin-bottom: 20px
     &:nth-child(3)
-      top: 200px
-      right: 120px
+      right: $second
+    &:nth-child(5)
+      right: $third
+    &:nth-child(7)
+      right: $four
     &:nth-child(4)
-      top: 305px
-      right: 100px
-  &__rightWrapper
-    position: absolute
-    right: 0
-    transition-property: opacity, right
-    transition-delay: .6s
-    transition-timing-function: ease
-    transition-duration: 2s
-    opacity: 1
-    @media (max-width: 991px)
-      position: static
-  &__rightItems
-    &-popup
-      display: flex
-      align-items: center
-      $popupRWidht: 350px
-      width: $popupRWidht
-      right: -$popupRWidht - 10px
-      position: absolute
+      left: $second
+    &:nth-child(6)
+      left: $third
+    &:nth-child(8)
+      left: $four
+    & .six__popupText h5
+      order: 2
+    &_right .six__popupText h5
+      order: 2
+    &_right .six__popupInvisible
+      right: auto
+      left: 27px
+    &:hover .six__popupInvisible
+      opacity: 1
+      pointer-events: auto
 
-      z-index: 10
-      @media (max-width: 991px)
-        position: static
-        width: auto
-    &:first-child
-      top: 0
-      right: 130px
-    &:nth-child(2)
-      top: 100px
-      left: -105px
-    &:nth-child(3)
-      top: 200px
-      left: -80px
-    &:nth-child(4)
-      top: 305px
-      left: -55px
-  &__rightWord, &__leftWord
-    font-size: 12px
-    &:not(:last-child)
-      margin-bottom: 10px
-  &__plusImg
+  &__popupText
     display: flex
-    z-index: 9
+    align-items: center
+    position: relative
+    & h5
+      color: white
+      margin-left: 10px
+      margin-right: 10px
+      font-size: 16px
+      z-index: 1
 
-.six__leftItems:hover .six__plusImg
-  background-color: #80685A
-  border-radius: 0 6px 6px 0
-  @media (max-width: 991px)
-    background-color: inherit
-    border-radius: unset
+  &__plusImg
+    z-index: 1
 
-.six__rightItems:hover .six__plusImg
-  background-color: #80685A
-  border-radius: 6px 0 0 6px
-
-.six__leftItems:hover .six__plusImg svg
-  transform: rotate(45deg)
-
-.six__rightItems:hover .six__plusImg svg
-
-  transform: rotate(45deg)
-
-.six__rightItems:hover .six__plusImg svg rect
-  stroke: #80685A
-
-.six__leftItems:hover .six__plusImg svg rect
-  stroke: #80685A
-
-.six__leftItems:hover .six__leftItems-popup h5
-  opacity: 0
+  &__popupInvisible
+    position: absolute
+    background: radial-gradient(52.81% 52.81% at 21.91% 39.89%, #A98976 0%, #80685A 100%)
+    top: 0
+    right: 27px
+    min-width: 300px
+    padding: 15px
+    z-index: 10
+    opacity: 0
+    pointer-events: none
+    @media (max-width: 991px)
+      right: auto
+      left: 27px
+  &__popupList
+    color: white
+  &__popupItems
+    &:not(:last-child)
+      padding-bottom: 5px
 
 
-.six__rightItems:hover .six__rightItems-popup > h5
-  opacity: 0
 
-.six__leftItems:hover .six__leftList
-  opacity: 1
-  pointer-events: auto
-
-.six__rightItems:hover .six__rightList
-  opacity: 1
-  pointer-events: auto
-
-.six-visible
-  opacity: 1
-  &.six__leftWrapper
-    left: 0
-  &.six__rightWrapper
-    right: 0
 
 
 
