@@ -2,16 +2,32 @@
   padding: 0
   margin: 0
 
+::-webkit-scrollbar
+  background: rgba(0, 0, 0, 0)
+  width: 6px
+
+::-webkit-scrollbar-thumb
+  border-radius: 10px
+  background-color: #AF8E7B
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3)
+
 body
   box-sizing: border-box
   overflow-x: hidden
   font-family: 'Lato'
 
+@mixin colorText
+  -webkit-background-clip: text
+  color: #8E8E8E00
+  line-height: 1.4em
+  word-spacing: 0.1em
+  background-image: linear-gradient(to right top, #ffffff, #776154, #AF8E7B, #222222, #776154)
+
 h1,h2,h3,h4,h5,h6
   font-family: 'TD-Neumann'
   font-weight: 300
 
-h1[class], h2[class], h3[class]
+h1, h2, h3
   @media (max-width: 991px)
     font-size: 34px
 
@@ -19,22 +35,21 @@ h1[class]
   @media (max-width: 340px)
     font-size: 30px
 
+h2
+  font-size: 40px
+
 h4[class]
   @media (max-width: 991px)
     font-size: 20px
 
 p
+  font-family: 'Lato'
   @media (max-width: 991px)
     font-size: 14px
-
-p[class]
-  @media (max-width: 991px)
-  font-size: 14px
 
 li
   @media (max-width: 991px)
     font-size: 14px
-
 
 input
   border: none
@@ -42,7 +57,6 @@ input
   background-color: inherit
 
 .body_popup-open
-  position: fixed
   overflow-y: scroll
   width: 100%
 
@@ -73,6 +87,9 @@ button
   cursor: pointer
   font-size: 16px
 
+
+
+
 .title_color
   -webkit-background-clip: text
   color: #8E8E8E00
@@ -80,6 +97,17 @@ button
   line-height: 1.4em
   word-spacing: 0.1em
   text-align: center
+  @media (max-width: 991px)
+    font-size: 40px!important
+  @media (max-width: 560px)
+    font-size: 34px!important
+
+.pages-additional
+  background-image: linear-gradient(to right top, #ffffff, #776154, #AF8E7B, #222222, #776154)
+  margin-top: 150px
+  text-align: left
+  @media (max-width: 768px)
+    margin-top: 200px
 
 .text_color
   -webkit-background-clip: text
@@ -90,19 +118,26 @@ button
   letter-spacing: 0.6px
   word-spacing: 0.1em
   text-align: center
+  font-family: 'TD-Neumann'
+  max-width: 750px
+  margin: auto
 
 .border_top
   display: flex
   position: absolute
-  top: 0
+  top: -1px
   height: 44px
   width: calc(100% - 80px)
   transform: rotate(180deg)
   right: 0
   @media (max-width: 768px)
     width: 100%
+  @media (max-width: 560px)
+    top: -22px
   & svg
     width: 100%
+    @media (max-width: 560px)
+      height: 22px
     & path
       fill: white
 
@@ -110,7 +145,7 @@ button
   display: flex
   position: absolute
   right: 0
-  bottom: 0
+  bottom: -1px
   height: 35px
   width: calc(100% - 80px)
   transform: rotate(180deg)
@@ -118,8 +153,18 @@ button
     width: 100%
   & svg
     width: 100%
+    @media (max-width: 560px)
+      height: 22px
     & path
       fill: white
+
+.arrow
+  &:before
+    content: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='7px' height='12px' viewBox='0 0 7 12' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Cg id='Icons' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cg id='Rounded' transform='translate(-687.000000, -2464.000000)'%3E%3Cg id='Hardware' transform='translate(100.000000, 2404.000000)'%3E%3Cg id='-Round-/-Hardware-/-keyboard_arrow_right' transform='translate(578.000000, 54.000000)'%3E%3Cg%3E%3Crect id='Rectangle-Copy-105' x='0' y='0' width='24' height='24'%3E%3C/rect%3E%3Cpath d='M9.29,15.88 L13.17,12 L9.29,8.12 C8.9,7.73 8.9,7.1 9.29,6.71 C9.68,6.32 10.31,6.32 10.7,6.71 L15.29,11.3 C15.68,11.69 15.68,12.32 15.29,12.71 L10.7,17.3 C10.31,17.69 9.68,17.69 9.29,17.3 C8.91,16.91 8.9,16.27 9.29,15.88 Z' id='🔹-Icon-Color' fill='%23AF8E7B'%3E%3C/path%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E")
+    margin-right: 8px
+
+.hidden
+  display: none
 
 @keyframes video
   0%

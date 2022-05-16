@@ -18,23 +18,25 @@
 .videoBlock__position
   position: absolute
   width: 300px
-  height: 200px
-  top: 20%
-  right: 4%
+  height: 150px
+  top: 15%
+  left: 85%
   @media (max-width: 1290px)
     top: 30%
-    right: -60px
-  @media (max-width: 1024px)
-    top: 50%
-    right: -90px
-  @media (max-width: 560px)
-    top: 59%
+    left: auto
     right: -130px
-  @media (max-width: 450px)
-    top: 63%
-  @media (max-width: 390px)
-    height: 150px
-    top: 65%
+  @media (max-width: 1024px)
+    top: 56%
+    right: -160px
+  @media (max-width: 560px)
+    top: 51%
+    height: 130px
+  @media (max-width: 430px)
+    height: 100px
+    top: 56%
+
+
+
 .videoBlock
   display: flex
   flex-direction: column
@@ -42,16 +44,27 @@
   position: absolute
   text-align: right
   animation: video 3s infinite ease-in-out
+  height: 100%
+  &:hover .videoBlock__text
+    color: #B08F7C
   &__img
-    align-self: flex-end
+    display: none
+    position: absolute
     max-width: 52px
     max-height: 52px
-    margin-bottom: 15px
+    @media (max-width: 991px)
+      display: block
   & p
     color: white
     max-width: 200px
+    transition: color .5s
+    text-align: center
     @media (max-width: 560px)
       max-width: 160px
+    & span
+      text-transform: uppercase
+      font-size: 24px
+      display: block
 
 .backGround-gradient
   background-image: linear-gradient(340deg, #A48573 1%, #232426 81%)
@@ -72,31 +85,36 @@
   background-size: 715px
   background-position: 85% bottom
   margin-bottom: 80px
+  @media (max-width: 1480px)
+    background-size: 650px
   @media (max-width: 1290px)
     background-size: 550px
     background-position: 95% bottom
   @media (max-width: 1024px)
     background-size: 450px
-    padding-bottom: 250px
+    padding-bottom: 300px
   @media (max-width: 560px)
     background-size: 350px
   @media (max-width: 560px)
-    background-size: 250px
-    padding-bottom: 100px
+    padding-bottom: 200px
 
   &__wrapper
-    padding-top: 200px
-    padding-bottom: 300px
+    padding-top: 180px
+    padding-bottom: 180px
     position: relative
     z-index: 20
+    @media (max-width: 560px)
+      padding-top: 120px
 
   &__title
     color: white
     font-size: 52px
     line-height: 1.3em
     letter-spacing: 1px
-    max-width: 300px
+    max-width: 500px
     margin-bottom: 25px
+    @media (max-width: 560px)
+      font-size: 36px
   &__text
     max-width: 460px
     color: #F4F4F4
@@ -121,16 +139,27 @@
     background-image: linear-gradient(180deg, #DCC29D00 0%, #AF8E7B 100%)
     border: 2px solid #AF8E7B
     border-radius: 25px
-    padding: 10px 15px
+    padding: 14px 30px
+    transition: filter .5s
+    &:hover
+      filter: brightness(80%)
+
+
 
   &__list
     padding-top: 50px
     color: white
     padding-left: 15px
+    list-style: none
+    @media (max-width: 560px)
+      display: none
     & li
-      font-weight: bold
+      display: flex
+      align-items: center
       font-size: 16px
       list-style: inherit
+      line-height: 24px
+
 
 
 

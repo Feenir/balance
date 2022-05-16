@@ -7,10 +7,10 @@
   &__title
     background-image: linear-gradient(to right top, #ffffff, #775154, #AF8E6B, #222222, #776154)
   &__textMain
-    color: #848484
     text-align: center
-    max-width: 670px
+    max-width: 750px
     margin-bottom: 30px
+    background-image: linear-gradient(to right top, #ffffff, #776154, #AF8E7B, #222222, #776154)
   &__itemLink
     display: flex
     align-items: stretch
@@ -24,7 +24,7 @@
     justify-content: center
     width: calc(33.33% - 10px)
     text-align: center
-    padding: 15px
+    padding: 15px 30px
     font-size: 18px
     font-weight: 200
     color: #616161
@@ -39,6 +39,7 @@
     @media (max-width: 691px)
       width: 100%
       transform: scale(.8)
+      font-size: 15px
     &.active
       transform: scale(1.05)
       font-size: 18px
@@ -51,51 +52,73 @@
         transform: scale(.85)
   &__tabsWrapper
     width: 100%
+    margin-bottom: 50px
   &__tabs
     display: none
     border: 1px solid #B08F7C
     border-radius: 16px
     margin-top: 40px
     padding: 40px
-    @media (max-width: 560px)
-      padding: 10px
+    &_one .price__tabsList
+      display: flex
+      column-gap: 20px
+      flex-direction: row
+      flex-wrap: wrap
+      @media (max-width: 560px)
+        padding: 20px
+    &_one .price__tabsItems
+      width: calc(50% - 30px)
+      @media (max-width: 560px)
+        width: 100%
+    &_two .price__tabsList
+      display: flex
+      column-gap: 20px
+      flex-direction: row
+      flex-wrap: wrap
+      @media (max-width: 560px)
+        padding: 20px
+    &_two .price__tabsItems
+      width: calc(50% - 30px)
+      @media (max-width: 560px)
+        width: 100%
+
     &.active
       display: flex
       flex-direction: column
   &__tabsTitle
-    font-size: 28px
+    font-family: 'Lato'
+    font-size: 18px
     margin-bottom: 20px
+    text-align: left
+
   &__tabsItems
     display: flex
     align-items: center
-    font-size: 14px
+    font-size: 16px
     color: #616161
     line-height: 17px
     list-style: none
-    padding-left: 10px
     &:before
-      content: '-'
-      font-size: 16px
+      content: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='7px' height='12px' viewBox='0 0 7 12' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Cg id='Icons' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cg id='Rounded' transform='translate(-687.000000, -2464.000000)'%3E%3Cg id='Hardware' transform='translate(100.000000, 2404.000000)'%3E%3Cg id='-Round-/-Hardware-/-keyboard_arrow_right' transform='translate(578.000000, 54.000000)'%3E%3Cg%3E%3Crect id='Rectangle-Copy-105' x='0' y='0' width='24' height='24'%3E%3C/rect%3E%3Cpath d='M9.29,15.88 L13.17,12 L9.29,8.12 C8.9,7.73 8.9,7.1 9.29,6.71 C9.68,6.32 10.31,6.32 10.7,6.71 L15.29,11.3 C15.68,11.69 15.68,12.32 15.29,12.71 L10.7,17.3 C10.31,17.69 9.68,17.69 9.29,17.3 C8.91,16.91 8.9,16.27 9.29,15.88 Z' id='🔹-Icon-Color' fill='%23AF8E7B'%3E%3C/path%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E")
+      margin-right: 8px
+      transform: translateY(3px)
     &:not(:last-child)
       margin-bottom: 10px
-  &__textTabs
-    font-size: 18px
-    color: #616161
-    &:not(:last-child)
-      margin-bottom: 20px
-  &__linkTabsBlock
+  &__textBlockTabs
     display: flex
-    align-items: center
-    justify-content: space-between
-    margin-top: 70px
-  &__tabsLink
-    padding: 15px
-    font-size: 18px
-    font-weight: 200
+    flex-wrap: wrap
+    column-gap: 20px
+  &__textTabs
+    font-size: 16px
     color: #616161
-    background-color: #DCC29D00
-    border: 2px solid #AF8E7B
-    border-radius: 25px
+    &_title
+      font-size: 18px
+      font-weight: bold
+    &:not(:last-child)
+      margin-bottom: 5px
+  &__textBlock
+    &:not(:last-child)
+      margin-bottom: 30px
 
   &__articles
     display: flex
@@ -113,6 +136,8 @@
     gap: 30px
     margin-bottom: 70px
     flex-wrap: wrap
+    @media (max-width: 1329px)
+      justify-content: center
     @media (max-width: 768px)
       justify-content: center
   &__articlesItems
@@ -123,10 +148,16 @@
     justify-content: flex-end
     padding: 0 10px 50px 10px
     width: calc(33.33% - 40px)
+    max-width: max-content
     min-height: 515px
+    filter: brightness(70%)
     background-repeat: no-repeat
     background-size: cover
     background-position: center center
+    transition: all .5s
+    &:hover
+      filter: brightness(100%)
+
     @media (max-width: 991px)
       min-height: 315px
     @media (max-width: 768px)
@@ -156,8 +187,11 @@
     &-title
       color: white
       font-size: 22px
+      text-align: center
     &-number
       font-size: 24px
     &-date
       font-size: 12px
       text-transform: uppercase
+
+

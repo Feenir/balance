@@ -13,7 +13,7 @@
   &_open
     opacity: 1
     visibility: visible
-    z-index: 9999
+    z-index: 10000
     transition-property: opacity, z-index, visibility, top
     transition-duration: .5s
     transition-timing-function: ease
@@ -28,48 +28,74 @@
     border-radius: 16px
     top: -150%
     padding: 40px
-    left: calc(50% + 80px)
+    left: 50%
     transform: translate(-50%, -50%)
     background-color: #252525
-    max-width: 340px
+    max-width: 550px
     max-height: 560px
     transition-property: opacity, z-index, visibility, top
     transition-duration: .5s
     transition-timing-function: ease
+    @media (max-width: 991px)
+      min-width: auto
+      max-width: 380px
+    @media (max-width: 768px)
+      left: 50%
+    @media (max-width: 560px)
+      max-width: 300px
+    @media (max-width: 490px)
+      max-width: 250px
+      padding: 20px
+    @media (max-width: 390px)
+      max-width: 200px
+      padding: 10px
 
   &__callContent
-    display: flex
-    align-content: center
-    justify-content: center
+    display: block
     text-align: center
-    flex-direction: column
+    z-index: 100
 
   &__title
     font-size: 44px
     color: white
     margin-bottom: 10px
+    @media (max-width: 560px)
+      font-size: 34px
+    @media (max-width: 490px)
+      font-size: 28px
     & span
       color: #AF8E7B
 
   &__textBody
     color: white
     margin-bottom: 20px
-    padding: 0 15px
+    padding: 0 75px
+    @media (max-width: 560px)
+      padding: 0 15px
 
   &__form
     display: inline-flex
     flex-direction: column
     z-index: 100
+    min-width: 60%
 
   &__callClose
     position: absolute
     cursor: pointer
     right: -40px
     top: -30px
+    transition: transform .5s
+    @media (max-width: 390px)
+      right: -20px
+    &:hover
+      transform: scale(1.075)
     & svg
       background-color: #AF8E7B
       border: 2px solid #AF8E7B
       border-radius: 50%
+      @media (max-width: 390px)
+        width: 22px
+        height: 22px
   &__userBlock
     display: flex
     align-items: center
@@ -109,13 +135,136 @@
       background-color: #AF8E7B
       color: #ffffff
 
-.up
+.popupFull
   position: fixed
-  bottom: 50px
-  left: 120px
-  width: 65px
-  @media (max-width: 768px)
-    left: 30px
+  opacity: 0
+  z-index: -99999
+  visibility: hidden
+  width: 100%
+  height: 100%
+  top: 0
+  right: 0
+  &_open
+    visibility: visible
+    opacity: 1
+    z-index: 10001
+  &__body
+    display: flex
+    align-items: center
+    height: 100%
+    position: relative
+    @media (max-width: 768px)
+      flex-direction: column
+  &__content
+    display: flex
+    align-items: center
+    justify-content: center
+    height: 100%
+    padding: 0 50px
+    position: relative
+
+    &_top
+      top: -100%
+    &_topOpen
+      top: 0
+      transition-property: top
+      transition-timing-function: ease
+      transition-duration: .7s
+    &_bottom
+      bottom: -100%
+    &_bottomOpen
+      bottom: 0
+      transition-property: bottom
+      transition-timing-function: ease
+      transition-duration: .7s
+    &:first-child
+      width: 60%
+      background-color: #222222
+      @media (max-width: 768px)
+        width: 100%
+    &:nth-child(2)
+      flex-direction: column
+      align-items: flex-end
+      background-image: url("../img/backMain.jpg")
+      background-size: contain
+      width: 40%
+      @media (max-width: 768px)
+        width: 100%
+        align-items: center
+  &__firstItems
+    &:not(:last-child)
+      margin-bottom: 25px
+    & a
+      font-family: "TD-Neumann", Sans-serif
+      font-size: 56px
+      color: #B08F7C
+      transition: color .5s ease
+      @media (max-width: 768px)
+        font-size: 40px
+      @media (max-width: 560px)
+        font-size: 32px
+      &:hover
+        color: white
+  &__logo
+    max-width: 150px
+    margin-bottom: 80px
+    transition: transform .5s
+    &:hover
+      transform: scale(1.1)
+
+  &__twoList
+    display: flex
+    align-items: flex-end
+    flex-direction: column
+    justify-content: center
+    @media (max-width: 768px)
+      align-items: center
+
+  &__twoItems
+    &:not(:last-child)
+      margin-bottom: 15px
+
+  &__twoLink
+    display: flex
+    color: white
+    transition: color .5s ease
+    & svg
+      transition: fill .5s
+      padding-right: 8px
+    &:hover
+      color: #B08F7C
+    &:hover svg
+      fill: #B08F7C
+
+  &__socialsList
+    display: flex
+    align-items: center
+    margin-top: 30px
+
+  &__socialsItems
+    &:not(:last-child)
+      margin-right: 10px
+    &:hover a svg path
+      fill: #B08F7C
+    & a svg
+      width: 22px
+      height: 22px
+    & a svg path
+      fill: white
+      transition: fill .5s
+
+  &__close
+    position: absolute
+    top: -100%
+    color: white
+    cursor: pointer
+    font-size: 40px
+    transition: top .5s ease .6s, transform .5s
+    &:hover
+      transform: scale(1.04)
+    &_open
+      top: 20px
+      right: 50px
 
 
 

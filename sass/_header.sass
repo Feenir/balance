@@ -3,6 +3,10 @@
   max-height: 83px
   z-index: 100
   position: relative
+  &_black
+    background-color: black
+  &_black .header__wrapper
+    background-color: black
   @media (max-width: 560px)
     padding-top: 0
     z-index: 200
@@ -14,6 +18,8 @@
     @media (max-width: 1340px)
       flex-wrap: wrap
       column-gap: 35px
+    @media (max-width: 968px)
+      justify-content: flex-start
     @media (max-width: 768px)
       flex-direction: column
     @media (max-width: 560px)
@@ -21,9 +27,10 @@
       flex-wrap: nowrap
       background-color: #232426
       position: fixed
-      width: 100%
+      width: calc(100% - 20px)
       padding-top: 15px
       padding-bottom: 15px
+      top: 0
   &__img
     display: flex
     align-items: center
@@ -31,9 +38,12 @@
     @media (max-width: 1340px)
       width: calc(50% - 5px)
       margin-bottom: 20px
+    @media (max-width: 968px)
+      width: max-content
     @media (max-width: 768px)
       width: 100%
     @media (max-width: 560px)
+      width: 70px
       margin-bottom: 0
 
     & span
@@ -42,7 +52,7 @@
       margin-left: 10px
       font-size: 12px
       color: #C4C4C4
-      @media (max-width: 560px)
+      @media (max-width: 991px)
         display: none
       &:before
         content: ''
@@ -57,7 +67,7 @@
     align-items: center
     justify-content: space-between
     width: calc(50% - 5px)
-    @media (max-width: 768px)
+    @media (max-width: 968px)
       width: 100%
       margin-bottom: 20px
     @media (max-width: 661px)
@@ -71,10 +81,24 @@
     color: #C4C4C4
     width: calc(50% - 5px)
     column-gap: 15px
+    &_map
+      &:before
+        content: ''
+        width: 35px
+        height: 30px
+        background-image: url("../img/map.png")
+        background-position: center center
+        background-size: cover
+        border-radius: 50%
+    @media (max-width: 968px)
+      width: max-content
     @media (max-width: 661px)
       width: 100%
     &:not(:last-child)
       margin-right: 10px
+      @media (max-width: 968px)
+        margin-right: 20px
+
     &:first-child
       font-size: 14px
       @media (max-width: 661px)
@@ -88,21 +112,14 @@
           bottom: 0
           left: 0
           width: 100%
-          height: 0.1em
+          height: 1px
           background-color: #B08F7C
-          opacity: 0
+          opacity: 1
           transition: opacity 300ms, transform 300ms
         &:hover::after
-          opacity: 1
+          opacity: 0
           transform: translate3d(0, 0.2em, 0)
-      &:before
-        content: ''
-        width: 35px
-        height: 30px
-        background-image: url("../img/map.png")
-        background-position: center center
-        background-size: cover
-        border-radius: 50%
+
     & a
       display: flex
       align-items: flex-end
@@ -133,11 +150,23 @@
     min-width: 210px
     @media (max-width: 768px)
       width: 100%
-      min-width: auto
+      min-width: unset
       align-items: flex-start
+    @media (max-width: 560px)
+      flex-direction: row
+      align-items: center
+      justify-content: flex-end
     & a
+      display: flex
+      align-items: center
       font-size: 24px
       color: #C4C4C4
+      &:before
+        display: none
+        content: url("data:image/svg+xml,%0A%3Csvg version='1.1' id='Capa_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' width='14px' height='14px' viewBox='0 0 477.156 477.156' style='enable-background:new 0 0 477.156 477.156;' xml:space='preserve'%3E%3Cg%3E%3Cpath fill='%23AF8E7B' d='M475.009,380.316l-2.375-7.156c-5.625-16.719-24.062-34.156-41-38.75l-62.688-17.125c-17-4.625-41.25,1.594-53.688,14.031 l-22.688,22.688c-82.453-22.28-147.109-86.938-169.359-169.375L145.9,161.94c12.438-12.438,18.656-36.656,14.031-53.656 l-17.094-62.719c-4.625-16.969-22.094-35.406-38.781-40.969L96.9,2.19c-16.719-5.563-40.563,0.063-53,12.5L9.962,48.659 C3.899,54.69,0.024,71.94,0.024,72.003c-1.187,107.75,41.063,211.562,117.281,287.781 c76.031,76.031,179.454,118.219,286.891,117.313c0.562,0,18.312-3.813,24.375-9.845l33.938-33.938 C474.946,420.878,480.571,397.035,475.009,380.316z'/%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3C/svg%3E%0A")
+        padding-right: 8px
+        @media (max-width: 560px)
+          display: block
       @media (max-width: 560px)
         font-size: 16px
       @media (max-width: 340px)
@@ -160,10 +189,38 @@
       bottom: 0
       left: 0
       width: 100%
-      height: 0.1em
+      height: 1px
       background-color: #B08F7C
-      opacity: 0
+      opacity: 1
       transition: opacity 300ms, transform 300ms
     &:hover::after
-      opacity: 1
+      opacity: 0
       transform: translate3d(0, 0.2em, 0)
+  &__burgerWrapper
+    display: none
+    margin-left: 15px
+    width: 40px
+    position: relative
+    cursor: pointer
+    @media (max-width: 768px)
+      display: block
+      left: 90%
+    @media (max-width: 560px)
+      left: auto
+  &__burgerMobile
+    background-color: white
+    width: 10px
+    height: 2px
+    position: relative
+    cursor: pointer
+    &:before, &:after
+      content: ''
+      position: absolute
+      background-color: white
+      width: 15px
+      height: 2px
+    &:before
+      top: 5px
+    &:after
+      top: -5px
+
