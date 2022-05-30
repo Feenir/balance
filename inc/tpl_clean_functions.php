@@ -101,152 +101,65 @@ add_action( 'admin_enqueue_scripts', function(){
 
 
 /* ========================================================
-*  Приемка
+*  Отправка письма из карточки товара
 ======================================================== */
 
-add_action('wp_ajax_sendPay', 'sendPay_callback');
-add_action('wp_ajax_nopriv_sendPay', 'sendPay_callback');
-function sendPay_callback()
+add_action('wp_ajax_sendOrder', 'sendOrder_callback');
+add_action('wp_ajax_nopriv_sendOrder', 'sendOrder_callback');
+function sendOrder_callback()
 {
 
+    $to = 'balanse-expert@yandex.ru, ab0gacheva@yandex.ru, weca121@ya.ru';
+    $from = "noreply@balanse-expert.ru";
+
+    $headers  = "MIME-Version: 1.0" . "\r\n";
+    $headers .= "Content-type: text/html; charset=UTF-8" . "\r\n";
+    $headers .= 'Content-Transfer-Encoding: 7bit' . "\r\n";
+    $headers .= 'Date: ' . date('r', $_SERVER['REQUEST_TIME']) . "\r\n";
+    $headers .= 'Message-ID: <' . $_SERVER['REQUEST_TIME'] . md5($_SERVER['REQUEST_TIME']) . '@' . $_SERVER['SERVER_NAME'] . '>' . "\r\n";
+    $headers .= 'From: ' . $from . "\r\n";
+    $headers .= 'Reply-To: ' . $from . "\r\n";
+    $headers .= 'Return-Path: ' . $from . "\r\n";
+    $headers .= 'X-Mailer: PHP v' . phpversion() . "\r\n";
+    $headers .= 'X-Originating-IP: ' . $_SERVER['SERVER_ADDR'] . "\r\n";
 
 
-//    $payBody = array {
-//        TransactionId:  "1120305033"
-//        Amount: "100.00",
-//        Currency:   "RUB",
-//        PaymentAmount:  "100.00",
-//        PaymentCurrency:    "RUB",
-//        OperationType:  "Payment",
-//        InvoiceId:  "1234567",
-//        AccountId:  "",
-//        SubscriptionId: "",
-//        Name:   "",
-//        Email:  "user@example.com",
-//        DateTime:   "2022-05-02 0:2:22",
-//        IpAddress:  "89.109.44.147",
-//        IpCountry:  "RU",
-//        IpCity: "\u041d\u0438\u0436\u043d\u0438\u0439 \u041d\u043e\u0432\u0433\u043e\u0440\u043e\u0434",
-//        IpRegion:   "\u041d\u0438\u0436\u0435\u0433\u043e\u0440\u043e\u0434\u0441\u043a\u0430\u044f \u043e\u0431\u043b\u0430\u0441\u0442\u044c",
-//        IpDistrict: "\u041f\u0440\u0438\u0432\u043e\u043b\u0436\u0441\u043a\u0438\u0439 \u0444\u0435\u0434\u0435\u0440\u0430\u043b\u044c\u043d\u044b\u0439 \u043e\u043a\u0440\u0443\u0433",
-//        IpLatitude: "56.329918",
-//        IpLongitude:    "44.009193",
-//        CardFirstSix:   "424242",
-//        CardLastFour:   "4242",
-//        CardType:   "Visa",
-//        CardExpDate:    "12\/12",
-//        Issuer: "CloudPayments",
-//        IssuerBankCountry:  "RU",
-//        Description:    "\u0411\u043b\u0430\u0433\u043e\u0442\u0432\u043e\u0440\u0438\u0442\u0435\u043b\u044c\u043d\u043e\u0435 \u043f\u043e\u0436\u0435\u0440\u0442\u0432\u043e\u0432\u0430\u043d\u0438\u0435",
-//        AuthCode:   "A1B2C3",
-//        TestMode:   "1",
-//        Status: "Authorized",
-//        GatewayName:    "Test",
-//        Data:   "{\\\"myProp\\\:\\\"myProp value\\\"}",
-//        TotalFee:   "0.00",
-//        CardProduct:    "I",
-//        PaymentMethod:  "",
-//    };
-//    {
-//"TransactionId":"1120656537",
-//"Amount":"101.00",
-//"Currency":"RUB",
-//"PaymentAmount":"101.00",
-//"PaymentCurrency":"RUB",
-//"OperationType":"Payment",
-//"InvoiceId":"",
-//"AccountId":"w.white@cloudpayments.ru",
-//"SubscriptionId":"",
-//"Name":"",
-//"Email":"ivaka@cloudpayments.ru",
-//"DateTime":"2022-05-02 12:01:47",
-//"IpAddress":"89.109.44.147",
-//"IpCountry":"RU",
-//"IpCity":"\u041d\u0438\u0436\u043d\u0438\u0439 \u041d\u043e\u0432\u0433\u043e\u0440\u043e\u0434",
-//"IpRegion":"\u041d\u0438\u0436\u0435\u0433\u043e\u0440\u043e\u0434\u0441\u043a\u0430\u044f \u043e\u0431\u043b\u0430\u0441\u0442\u044c",
-//"IpDistrict":"\u041f\u0440\u0438\u0432\u043e\u043b\u0436\u0441\u043a\u0438\u0439 \u0444\u0435\u0434\u0435\u0440\u0430\u043b\u044c\u043d\u044b\u0439 \u043e\u043a\u0440\u0443\u0433",
-//"IpLatitude":"56.329918",
-//"IpLongitude":"44.009193",
-//"CardFirstSix":"424242",
-//"CardLastFour":"4242",
-//"CardType":"Visa",
-//"CardExpDate":"04\/23",
-//"Issuer":"CloudPayments",
-//"IssuerBankCountry":"RU",
-//"Description":"\u041f\u043e\u0436\u0435\u0440\u0442\u0432\u043e\u0432\u0430\u043d\u0438\u0435 \u0432 \u0444\u043e\u043d\u0434 ...",
-//"AuthCode":"A1B2C3",
-//"Token":"tk_0cf59ce3cfee4ad591f9d3e86439c",
-//"TestMode":"1",
-//"Status":"Completed",
-//"GatewayName":"Test",
-//"Data":"{\\\"name\\\":\\\"ivan\\\",
-//\\\"lastName\\\":\\\"ivanov\\\",
-//\\\"phone\\\":\\\"\\\"}",
-//"TotalFee":"0.00",
-//"CardProduct":"I",
-//"PaymentMethod":""}
+    $message = '';
+    // Переменные
+    $subject = htmlspecialchars(strip_tags(trim($_POST['form_subject'])));
+
+    // Разбираем все непустые поля формы (кроме form_subject) на Ключ - Значение и заносим в таблицу
+    $c = true;
+    foreach ( $_POST as $key => $value ) {
+        if ( $value != "" && $key != "form_subject" ) {
+            $message .= "
+      " . ( ($c = !$c) ? '<tr>':'<tr style="background-color: #f8f8f8;">' ) . "
+        <td style='padding: 10px; border: #e9e9e9 1px solid;'><b>$key</b></td>
+        <td style='padding: 10px; border: #e9e9e9 1px solid;'>$value</td>
+      </tr>
+      ";
+        }
+    }
+    $message = "<table style='width: 100%;'>$message</table>";
 
 
-    $to = 'weca121@ya.ru';
-    $subject = 'Pay';
-    $from = "noreply@fkdd.ru";
+    $mail = mail($to, $subject, $message, $headers);
+    ?><pre> <?php print_r($mail); ?> </pre><?php
 
-    $d1 = json_encode($_POST['Data']);
-    $d2 = json_decode($d1);
-//    $d3 = stripslashes($d2);
-    $d3 = stripslashes(stripslashes($d1));
-
-
-//    $outcls=json_decode($d3); // пустота
-//    $outcls=$d3; // пустота
-    $outcls=json_decode($d1);
-//    $d12 = ($d3['name']);
-    //$finishName = $outcls->{'name'};
-
-//    $d3 = json_decode($d22);
-//    $d3 = json_decode($d22);
-//    $d3 = json_encode($d2);
-//    $d3 = json_encode($d22['Name'];
-//    $d3 = $d22=>Name;
-
-
-    $data1=json_encode($_POST['Data'], JSON_UNESCAPED_UNICODE);
-    $data2=json_decode(stripslashes($data1));
-    $data3=json_decode($data2);
-    $finishName=$data3->{'name'} . ' ' . $data3->{'lastName'};
-
-
-    mail($to, $subject, $_POST['Amount'] );
-
-    // $payDataName = $_POST['Name']; // Имя Name
-//    $payDataName = json_decode($_POST['Data']['Name']['lastName']); // $a[‘aaa’][‘bbb’]
-//    $payDataName = json_encode($_POST['Data'] => lastName'); // $a[‘aaa’][‘bbb’]
-//    $payDataName = json_encode($_POST['Data'](json_decode($d1)));
-//
-//    $payDataLastName = $_POST['lastName']; // Имя Name
-    $payDataEmail = $_POST['Email']; // Имя Name
-    $payDataAmount = $_POST['Amount']; // сумма
-    $payDataDateTime = $_POST['DateTime']; // сумма
-
-    $my_postarr = array(
-        'post_type'    => 'donation',
-        'post_title'    => $finishName,
-        'post_content'  => '', // контент
-        'post_status'   => 'publish' // опубликованный пост
-    );
-
-    // добавляем пост и получаем его ID
-    $my_post_id = wp_insert_post( $my_postarr );
-
-    $field_key = 'field_626aba8a891d2';
-    update_field($field_key, $payDataAmount, $my_post_id);
-
-
-
-
+    if ($mail == false) {
+        echo ' Ошибка ';
+    } else {
+        echo ' Удачно отправлено ';
+    }
 
     wp_die();
 }
+
+
+
+
+
+
 
 
 

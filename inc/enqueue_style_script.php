@@ -11,7 +11,10 @@ if (!function_exists('add_scripts')) { // если ф-я уже есть в до
         wp_deregister_script('jquery'); // выключаем стандартный jquery
         wp_register_script('jquery_new', '//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js', '', '', true);
         wp_enqueue_script('maskedinput', get_template_directory_uri() . '/js/jquery.maskedinput.min.js', array('jquery_new'), '', true);    // masked
-//        wp_enqueue_script('slickjs', '//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js', array('jquery_new'), false, true); // слайдер слик
+       
+       
+        wp_enqueue_script('slickjs', '//multibuhgalter.ru/authform/multibuhgalter-auth.js', array('jquery_new'), false, true); // слайдер слик
+	
         wp_enqueue_script('swiper', '//unpkg.com/swiper@8/swiper-bundle.min.js', array('jquery_new'), false, true); // слайдер слик
 //        wp_enqueue_script('swiper', get_template_directory_uri() . '/js/swiper-bundle.min.js', array('jquery_new'), '', true);    // swiper
         wp_enqueue_script('fancyBox', get_template_directory_uri() . '/js/fancybox.js', array('jquery_new'), '', true); // и скрипты шаблона

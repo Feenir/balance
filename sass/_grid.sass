@@ -13,8 +13,8 @@
 
 body
   box-sizing: border-box
-  overflow-x: hidden
   font-family: 'Lato'
+  overflow-x: hidden
 
 @mixin colorText
   -webkit-background-clip: text
@@ -66,6 +66,8 @@ input
   padding-left: 80px
   @media (max-width: 1340px)
     padding: 0 15px 0 95px
+  @media (max-width: 1280px)
+    max-width: 1000px
   @media (max-width: 768px)
     padding: 0 15px
 
@@ -87,9 +89,6 @@ button
   cursor: pointer
   font-size: 16px
 
-
-
-
 .title_color
   -webkit-background-clip: text
   color: #8E8E8E00
@@ -97,10 +96,10 @@ button
   line-height: 1.4em
   word-spacing: 0.1em
   text-align: center
-  @media (max-width: 991px)
+  @media (max-width: 1440px)
     font-size: 40px!important
   @media (max-width: 560px)
-    font-size: 34px!important
+    font-size: 32px!important
 
 .pages-additional
   background-image: linear-gradient(to right top, #ffffff, #776154, #AF8E7B, #222222, #776154)
@@ -130,6 +129,8 @@ button
   width: calc(100% - 80px)
   transform: rotate(180deg)
   right: 0
+  &_footer
+    height: 22px
   @media (max-width: 768px)
     width: 100%
   @media (max-width: 560px)
@@ -149,6 +150,7 @@ button
   height: 35px
   width: calc(100% - 80px)
   transform: rotate(180deg)
+  z-index: 100
   @media (max-width: 768px)
     width: 100%
   & svg

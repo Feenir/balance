@@ -15,37 +15,34 @@ get_header();
 				ИПБ России и членов Палаты налоговых консультантов.
 				<span>Вы занимаетесь бизнесом, мы — Вашей бухгалтерией.</span></p>
 			<div class="hero__buttonsLink">
-				<a href="#hero" class="hero__link js-popup_open js-btn_audit">Получить аудит бесплатно</a>
+				<a href="" class="hero__link js-popup_open js-btn_audit">Получить аудит бесплатно</a>
 			</div>
 			<ul class="hero__list">
 				<li class="hero__items arrow">Индивидуально подбираем тариф</li>
 				<li class="hero__items arrow">Нет скрытых ежемесячных доплат</li>
 				<li class="hero__items arrow">Вникаем в специфику бизнеса</li>
 			</ul>
-		</div>
-		
-		
-		<a href="#hero" class="videoBlock__position js-popup_open js-btn_sail">
-			<div class="videoBlock">
-				<div class="videoBlock__img">
-					<svg width="22px" height="22px" viewBox="0 0 49 60" version="1.1" xmlns="http://www.w3.org/2000/svg"
-					     xmlns:xlink="http://www.w3.org/1999/xlink">
-						<g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-							<g id="Gesture-7" fill="white">
-								<path
-										d="M45.4,59.4 L42.4,59.4 L42.4,53.1 L45.4,42.4 L45.4,32.6 L32.7,30.3 C28,29 25.4,26.2 25.4,22.5 L25.4,15.6 C25.4,13.4 23.6,11.6 21.5,11.6 C19.3,11.6 17.5,13.4 17.5,15.6 L17.5,39.4 L6.9,39.4 C4.7,39.4 3,41.2 3,43.4 C3,45.7 4.8,47.5 6.9,47.5 L11.5,47.5 C15.8,47.5 19.2,51 19.2,55.3 L19.2,59.2 L16.2,59.2 L16.2,55.3 C16.2,52.6 14.1,50.5 11.5,50.5 L6.9,50.5 C3.1,50.5 0,47.4 0,43.5 C0,39.6 3.1,36.4 6.9,36.4 L14.5,36.4 L14.5,15.6 C14.5,11.8 17.6,8.6 21.4,8.6 C25.3,8.6 28.4,11.7 28.4,15.6 L28.4,22.5 C28.4,25.3 31.1,26.7 33.5,27.4 L48.4,30.1 L48.4,42.8 L45.4,53.5 L45.4,59.4 Z"
-										id="Shape"></path>
-								<path
-										d="M15.5,31.4 C9.3,28.9 5.3,23 5.3,16.3 C5.3,7.3 12.6,0 21.6,0 C30.6,0 37.9,7.3 37.9,16.3 C37.9,21.4 35.6,26.1 31.5,29.2 L29.7,26.8 C33,24.3 34.9,20.4 34.9,16.2 C34.9,8.9 28.9,2.9 21.6,2.9 C14.3,2.9 8.3,8.9 8.3,16.2 C8.3,21.6 11.6,26.5 16.6,28.5 L15.5,31.4 Z"
-										id="Shape"></path>
+			<a href="#hero" class="videoBlock__position js-popup_open js-btn_sail">
+				<div class="videoBlock">
+					<div class="videoBlock__img">
+						<svg width="22px" height="22px" viewBox="0 0 49 60" version="1.1" xmlns="http://www.w3.org/2000/svg"
+						     xmlns:xlink="http://www.w3.org/1999/xlink">
+							<g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+								<g id="Gesture-7" fill="white">
+									<path
+											d="M45.4,59.4 L42.4,59.4 L42.4,53.1 L45.4,42.4 L45.4,32.6 L32.7,30.3 C28,29 25.4,26.2 25.4,22.5 L25.4,15.6 C25.4,13.4 23.6,11.6 21.5,11.6 C19.3,11.6 17.5,13.4 17.5,15.6 L17.5,39.4 L6.9,39.4 C4.7,39.4 3,41.2 3,43.4 C3,45.7 4.8,47.5 6.9,47.5 L11.5,47.5 C15.8,47.5 19.2,51 19.2,55.3 L19.2,59.2 L16.2,59.2 L16.2,55.3 C16.2,52.6 14.1,50.5 11.5,50.5 L6.9,50.5 C3.1,50.5 0,47.4 0,43.5 C0,39.6 3.1,36.4 6.9,36.4 L14.5,36.4 L14.5,15.6 C14.5,11.8 17.6,8.6 21.4,8.6 C25.3,8.6 28.4,11.7 28.4,15.6 L28.4,22.5 C28.4,25.3 31.1,26.7 33.5,27.4 L48.4,30.1 L48.4,42.8 L45.4,53.5 L45.4,59.4 Z"
+											id="Shape"></path>
+									<path
+											d="M15.5,31.4 C9.3,28.9 5.3,23 5.3,16.3 C5.3,7.3 12.6,0 21.6,0 C30.6,0 37.9,7.3 37.9,16.3 C37.9,21.4 35.6,26.1 31.5,29.2 L29.7,26.8 C33,24.3 34.9,20.4 34.9,16.2 C34.9,8.9 28.9,2.9 21.6,2.9 C14.3,2.9 8.3,8.9 8.3,16.2 C8.3,21.6 11.6,26.5 16.6,28.5 L15.5,31.4 Z"
+											id="Shape"></path>
+								</g>
 							</g>
-						</g>
-					</svg>
+						</svg>
+					</div>
+					<p class="videoBlock__text">Первый месяц бесплатно</p>
 				</div>
-				<p class="videoBlock__text"><span>Акция</span> для новых клиентов</p>
-			</div>
-		</a>
-		
+			</a>
+		</div>
 		<div class="backGround"></div>
 		<div class="backGround-gradient"></div>
 		<div class="border border_bottom">
@@ -66,7 +63,7 @@ get_header();
 					<div class="we__blockBack we__blockGray">
 						<p>Декларации отправим в срок, платежки на налоги подготовим во время</p>
 					</div>
-					<div class="videoBlock__img we__clickPosition">
+					<div class="we__clickPosition">
 						<svg width="22px" height="22px" viewBox="0 0 49 60" version="1.1" xmlns="http://www.w3.org/2000/svg"
 						     xmlns:xlink="http://www.w3.org/1999/xlink">
 							<g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -127,9 +124,15 @@ get_header();
 						<p>Простое общение и всесторонняя поддержка</p>
 						<span class="we__backBlock we__backBlock-print"></span></div>
 					<div class="we__blockBack  we__blockBrown">
-						<p class="we__textSmall">Говорим на понятном языке, будем общаться там где Вам удобно: телефон, Whatsapp,
-							Telegram, email, Личный кабинет клиента.
+						<p class="we__textSmall">Говорим на понятном языке, будем общаться там где Вам удобно:
 						</p>
+						<ul class="we__list">
+							<li class="we__items">Whatsapp</li>
+							<li class="we__items">телефон</li>
+							<li class="we__items">Telegram</li>
+							<li class="we__items">email</li>
+							<li class="we__items">Личный кабинет клиента</li>
+						</ul>
 					</div>
 				</div>
 				
@@ -479,7 +482,7 @@ get_header();
 						})
 					})('Inline', {
 						id: '6256979d61cca8003f3237ac',
-						buttonText: 'Пройти тест',
+						buttonText: 'Пройти опрос',
 						bgColor: '#af8e7b',
 						textColor: '#ffffff',
 						rounded: true,
@@ -515,21 +518,6 @@ get_header();
 					<a href="#reviews" class="about__discriptionsLink">Смотреть отзывы </a>
 				</div>
 			</div>
-			<div class="about__block">
-				<!-- Swiper -->
-				<div class="swiper aboutSwiper">
-					<div class="swiper-wrapper about__swiperWrapper">
-						<div class="swiper-slide about__slide"></div>
-						<!--					<div class="swiper-slide about__slide"></div>-->
-						<!--					<div class="swiper-slide about__slide"></div>-->
-					</div>
-					<div class="about__navigation">
-						<div class="about-next about_arrow"></div>
-						<div class="about-prev about_arrow"></div>
-					</div>
-				</div>
-			
-			</div>
 		</div>
 		<div class="backGround backGround_about"></div>
 		<div class="backGround-gradient backGround-gradient_about"></div>
@@ -548,6 +536,37 @@ get_header();
 	<section class="price" id="price">
 		<div class="container">
 			<div class="price__itemMain">
+				
+				<article class="price__articles">
+					<h3 class="price__articlesTitle title_color">Полезные статьи</h3>
+					<p class="price__articlesText text_color">Простым языком о сложных терминах
+					</p>
+					<div class="price__articlesBlock">
+						<a href="https://balanse-expert.ru/kak-rabotat-s-marketplejsami/" class="price__articlesItems">
+							<h5 class="price__articlesItems-title">Как работать с маркетплейсами?</h5>
+							<div class="price__articlesItems-dateBlock">
+								<span class="price__articlesItems-number">10</span>
+								<span class="price__articlesItems-date">янв</span>
+							</div>
+						</a>
+						<a href="https://balanse-expert.ru/avtomatizirovannaya-sistema-nalogooblozheniya-asn/" class="price__articlesItems">
+							<h5 class="price__articlesItems-title">«Автоматизированная система налогообложения» (АСН)</h5>
+							<div class="price__articlesItems-dateBlock">
+								<span class="price__articlesItems-number">10</span>
+								<span class="price__articlesItems-date">янв</span>
+							</div>
+						</a>
+						<a href="https://balanse-expert.ru/kak-platit-nalogi-pri-otmene-kbk/" class="price__articlesItems">
+							<h5 class="price__articlesItems-title">Как платить налоги при отмене КБК</h5>
+							<div class="price__articlesItems-dateBlock">
+								<span class="price__articlesItems-number">10</span>
+								<span class="price__articlesItems-date">янв</span>
+							</div>
+						</a>
+					</div>
+				</article>
+				
+				
 				<h2 class="price__title title_color">Часто задаваемые вопросы</h2>
 				<p class="price__textMain text_color">Качественный аутсорсинг от команды аттестованных профессиональных
 					бухгалтеров ИПБ
@@ -632,37 +651,37 @@ get_header();
 					</div>
 				</div>
 				
-				<article class="price__articles">
-					<h3 class="price__articlesTitle title_color">Полезные статьи</h3>
-					<p class="price__articlesText text_color">Простым языком о сложных терминах
-					</p>
-					<div class="price__articlesBlock">
-						<a href="#" class="price__articlesItems">
-							<h5 class="price__articlesItems-title">Как работать с маркетплейсами?</h5>
-							<div class="price__articlesItems-dateBlock">
-								<span class="price__articlesItems-number">10</span>
-								<span class="price__articlesItems-date">янв</span>
-							</div>
-						</a>
-						<a href="#" class="price__articlesItems">
-							<h5 class="price__articlesItems-title">Как работать с маркетплейсами?</h5>
-							<div class="price__articlesItems-dateBlock">
-								<span class="price__articlesItems-number">10</span>
-								<span class="price__articlesItems-date">янв</span>
-							</div>
-						</a>
-						<a href="#" class="price__articlesItems">
-							<h5 class="price__articlesItems-title">Как работать с маркетплейсами?</h5>
-							<div class="price__articlesItems-dateBlock">
-								<span class="price__articlesItems-number">10</span>
-								<span class="price__articlesItems-date">янв</span>
-							</div>
-						</a>
-					</div>
-				</article>
+			
 			</div>
 	</section>
+
+
+<?php
+$reviews = get_field('reviews');
+    if( $reviews ): ?>
 	<section class="reviews" id="reviews">
+		<div class="container">
+			<h3 class="reviews__title title_color">Отзывы клиентов</h3>
+			<!-- Swiper -->
+			<div class="swiper reviewsSwiper">
+				<div class="swiper-wrapper reviewsSwiper__wrapper">
+                    <?php foreach( $reviews as $reviews_id ): ?>
+					<div class="swiper-slide reviewsSwiper__slide">
+                        <a href="<?= esc_url($reviews_id['sizes']['full']); ?>" data-fancybox="reviews" data-caption="Отзывы">
+                            <img src="<?= esc_url($reviews_id['sizes']['large']); ?>" alt="<?=$reviews_id['title'];?>">
+						</a>
+					</div>
+                    <?php endforeach; ?>
+				</div>
+				<div class="reviewsSwiper__arrow reviewsSwiper__next"></div>
+				<div class="reviewsSwiper__arrow reviewsSwiper__prev"></div>
+				<div class="swiper-pagination reviewsSwiper__pagination"></div>
+			</div>
+		</div>
+	</section>
+    <?php endif; ?>
+<?php /* ?>
+ <section class="reviews" id="reviews">
 		<div class="container">
 			<h3 class="reviews__title title_color">Отзывы клиентов</h3>
 			<!-- Swiper -->
@@ -759,11 +778,14 @@ get_header();
 						</a>
 					</div>
 				</div>
-				
+
 				<div class="reviewsSwiper__arrow reviewsSwiper__next"></div>
 				<div class="reviewsSwiper__arrow reviewsSwiper__prev"></div>
 				<div class="swiper-pagination reviewsSwiper__pagination"></div>
 			</div>
 		</div>
 	</section>
+    <?php */ ?>
+
+
 <?php get_footer(); ?>

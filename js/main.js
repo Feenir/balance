@@ -1,3 +1,6 @@
+/* ==============================================
+** Слайдер
+============================================== */
 var aboutSwiper = new Swiper(".aboutSwiper", {
     slidesPerView: 1,
     navigation: {
@@ -6,9 +9,10 @@ var aboutSwiper = new Swiper(".aboutSwiper", {
     },
 });
 
+/* ==============================================
+** Слайдер
+============================================== */
 var reviewsSwiper = new Swiper(".reviewsSwiper", {
-    slidesPerView: 4,
-    spaceBetween: 15,
     autoplay: true,
     loop: true,
     delay: 3000,
@@ -23,15 +27,13 @@ var reviewsSwiper = new Swiper(".reviewsSwiper", {
     },
     breakpoints: {
         320: {
-            slidesPerView: 1,
+            slidesPerView: 1.7,
         },
         561: {
-            slidesPerView: 2,
-            spaceBetween: 15,
+            slidesPerView: 2.5,
         },
         991: {
-            slidesPerView: 4,
-            spaceBetween: 15,
+            slidesPerView: 5,
         }},
     on: {
         init() {
@@ -52,34 +54,33 @@ var reviewsSwiper = new Swiper(".reviewsSwiper", {
 ============================================== */
 jQuery(document).ready(function($){
     $('.js-popup_open').click(function (e) {
-        event.preventDefault();
+        e.preventDefault();
         $('.popup').addClass('popup_open');
         $('body').addClass('body_popup-open');
-
     });
 
     $('.js-btn_call').click(function() {
         $('.js-popup_head').html('Обратный <span>звонок</span>');
         $('.js-text_sale').text ('Оставьте заявку и мы обязательно свяжемся с вами')
-        $('.js-form-name').value('Обратный звонок');
+        $('.js-form-name').val('Обратный звонок');
     });
 
     $('.js-btn_audit').click(function() {
         $('.js-popup_head').html('Получить аудит <span>бесплатно</span>');
         $('.js-text_sale').text ('Оставьте заявку и мы обязательно свяжемся с вами')
-        $('.js-form-name').value('Аудит бесплатно');
+        $('.js-form-name').val('Аудит бесплатно');
     });
 
     $('.js-btn_sail').click(function() {
         $('.js-popup_head').html('Акция для новых <span>клиентов!</span>');
         $('.js-text_sale').text ('Первый месяц обслуживания бесплатно, удаленный доступ в 1С и экспресс аудит в подарок')
-        $('.js-form-name').value('Акция');
+        $('.js-form-name').val('Акция');
     });
 
     $('.js-btn_consultation').click(function() {
         $('.js-popup_head').html('Получить <span>консультацию!</span>');
         $('.js-text_sale').text ('Заполните форму и получите консультацию бесплатно')
-        $('.js-form-name').value('Акция');
+        $('.js-form-name').val('Акция');
     });
 
 
@@ -99,8 +100,8 @@ jQuery(document).ready(function($){
 });
 
 
-$('.js-full_burger-open').click(function (e) {
-    event.preventDefault();
+$('.js-full_burger-open').click(function(e) {
+    e.preventDefault();
     $('.popupFull').addClass('popupFull_open');
     $('.popupFull__content_top').addClass('popupFull__content_topOpen')
     $('.popupFull__content_bottom').addClass('popupFull__content_bottomOpen')
@@ -124,29 +125,6 @@ $('a[href*="#"]').click(function() {
     }, 700);
     return false;
 });
-
-/* ==============================================
-** Показать 6 причин при Скроле
-============================================== */
-// function onEntry(entry) {
-//     entry.forEach(change => {
-//         if (change.isIntersecting) {
-//             change.target.classList.add('six-visible');
-//         }
-//     });
-// }
-//
-// let options = {
-//     threshold: [0.5] };
-// let observer = new IntersectionObserver(onEntry, options);
-// let elements = document.querySelectorAll('.six-hidden');
-//
-// for (let elm of elements) {
-//     observer.observe(elm);
-// }
-
-
-
 /* ==============================================
 ** Показать 6 причин при клике
 ============================================== */
@@ -171,8 +149,6 @@ $('.js-fancybox-video').fancybox({
         media: {}
     }
 });
-
-
 /* ==============================================
 ** Маска
 ============================================== */
@@ -180,5 +156,69 @@ $('.js-phoneMask').mask("+7 (999) 999 - 9999",{autoclear: false});
 
 
 
+/* ==============================================
+** отправка заявки
+============================================== */
 
 
+
+$(function(){
+    'use strict';
+    $('#send').on('submit', function(e) {
+        e.preventDefault();
+        var fd = new FormData(this);
+        var th = $(this);
+
+
+
+        $.ajax({
+            //url: '/../inc/mail-order.php', // Путь до файла
+            url: ajaxurl + '?action=sendOrder',
+            type: 'POST',
+            contentType: false,
+            processData: false,
+            data: fd,
+            success: function(){
+                // alert("Ваше сообщение отправлено успешно!");
+                // $(".js-btnOrder").val("Отправлено");
+                window.location = "/spasibo";
+                // $(".js-btn-advice").text("Отправлено");
+                setTimeout(function() {
+                    // Done Functions
+                    $(this).trigger("reset");
+                    // $(".js-btn-advice").text("Отправить");
+                }, 1000);
+            }
+        });
+
+
+    });
+});
+
+$(function(){
+    'use strict';
+    $('#sendFooter').on('submit', function(e) {
+        e.preventDefault();
+        var fd = new FormData(this);
+        var th = $(this);
+        $.ajax({
+            //url: '/../inc/mail-order.php', // Путь до файла
+            url: ajaxurl + '?action=sendOrder',
+            type: 'POST',
+            contentType: false,
+            processData: false,
+            data: fd,
+            success: function(){
+                // alert("Ваше сообщение отправлено успешно!");
+                // $(".js-btnOrder").val("Отправлено");
+                window.location = "/spasibo";
+                // $(".js-btn-advice").text("Отправлено");
+                setTimeout(function() {
+                    // Done Functions
+                    $(this).trigger("reset");
+                    // $(".js-btn-advice").text("Отправить");
+                }, 1000);
+            }
+        });
+    });
+});

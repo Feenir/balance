@@ -19,7 +19,7 @@ get_header();
             <div class="tarifs__wrapperBlock" >
                 <?php if (have_posts()) while (have_posts()) : the_post(); ?>
                     <article id="post-<?php the_ID(); ?>">
-                        <h1><?php the_title(); ?></h1>
+                        <h1 class="pages-additional title_color"><?php the_title(); ?></h1>
                         <?php if (has_post_thumbnail()) { the_post_thumbnail('', 'large'); } ?>
                         <?php the_content(); ?>
                     </article>

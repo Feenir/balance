@@ -15,44 +15,24 @@
     align-items: center
     justify-content: space-between
     column-gap: 70px
-    @media (max-width: 1340px)
-      flex-wrap: wrap
-      column-gap: 35px
-    @media (max-width: 968px)
-      justify-content: flex-start
-    @media (max-width: 768px)
-      flex-direction: column
-    @media (max-width: 560px)
-      flex-direction: row
-      flex-wrap: nowrap
-      background-color: #232426
-      position: fixed
-      width: calc(100% - 20px)
-      padding-top: 15px
-      padding-bottom: 15px
-      top: 0
+    @media (max-width: 1200px)
+      column-gap: 50px
+    @media (max-width: 991px)
+      column-gap: 30px
+
   &__img
     display: flex
     align-items: center
     width: calc(30% - 5px)
-    @media (max-width: 1340px)
-      width: calc(50% - 5px)
-      margin-bottom: 20px
-    @media (max-width: 968px)
-      width: max-content
-    @media (max-width: 768px)
-      width: 100%
-    @media (max-width: 560px)
-      width: 70px
-      margin-bottom: 0
-
+    @media (max-width: 1200px)
+      width: unset
     & span
       display: flex
       align-items: center
       margin-left: 10px
       font-size: 12px
       color: #C4C4C4
-      @media (max-width: 991px)
+      @media (max-width: 1200px)
         display: none
       &:before
         content: ''
@@ -61,7 +41,9 @@
         background-color: #B08F7C
         margin-right: 10px
     & img
-      height: 68px
+      width: 68px
+      @media (max-width: 1200px)
+        max-width: none
   &__list
     display: flex
     align-items: center
@@ -69,7 +51,6 @@
     width: calc(50% - 5px)
     @media (max-width: 968px)
       width: 100%
-      margin-bottom: 20px
     @media (max-width: 661px)
       flex-direction: column
     @media (max-width: 560px)
@@ -79,9 +60,10 @@
     display: flex
     align-items: center
     color: #C4C4C4
-    width: calc(50% - 5px)
     column-gap: 15px
     &_map
+      @media (max-width: 991px)
+        display: none
       &:before
         content: ''
         width: 35px
@@ -153,7 +135,7 @@
       min-width: unset
       align-items: flex-start
     @media (max-width: 560px)
-      flex-direction: row
+      flex-direction: column
       align-items: center
       justify-content: flex-end
     & a
@@ -161,18 +143,18 @@
       align-items: center
       font-size: 24px
       color: #C4C4C4
+      @media (max-width: 585px)
+        font-size: 20px
+      @media (max-width: 560px)
+        font-size: 16px
+      @media (max-width: 375px)
+        font-size: 10px
       &:before
         display: none
         content: url("data:image/svg+xml,%0A%3Csvg version='1.1' id='Capa_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' width='14px' height='14px' viewBox='0 0 477.156 477.156' style='enable-background:new 0 0 477.156 477.156;' xml:space='preserve'%3E%3Cg%3E%3Cpath fill='%23AF8E7B' d='M475.009,380.316l-2.375-7.156c-5.625-16.719-24.062-34.156-41-38.75l-62.688-17.125c-17-4.625-41.25,1.594-53.688,14.031 l-22.688,22.688c-82.453-22.28-147.109-86.938-169.359-169.375L145.9,161.94c12.438-12.438,18.656-36.656,14.031-53.656 l-17.094-62.719c-4.625-16.969-22.094-35.406-38.781-40.969L96.9,2.19c-16.719-5.563-40.563,0.063-53,12.5L9.962,48.659 C3.899,54.69,0.024,71.94,0.024,72.003c-1.187,107.75,41.063,211.562,117.281,287.781 c76.031,76.031,179.454,118.219,286.891,117.313c0.562,0,18.312-3.813,24.375-9.845l33.938-33.938 C474.946,420.878,480.571,397.035,475.009,380.316z'/%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3C/svg%3E%0A")
         padding-right: 8px
         @media (max-width: 560px)
           display: block
-      @media (max-width: 560px)
-        font-size: 16px
-      @media (max-width: 340px)
-        font-size: 13px
-
-
   &__button
     display: flex
     align-items: center
@@ -181,8 +163,8 @@
     font-size: 14px
     transition: all .9s ease
     position: relative
-    @media (max-width: 560px)
-      display: none
+    @media (max-width: 350px)
+      font-size: 10px
     &::after
       content: ''
       position: absolute
@@ -198,15 +180,13 @@
       transform: translate3d(0, 0.2em, 0)
   &__burgerWrapper
     display: none
-    margin-left: 15px
+    margin: 0 15px
     width: 40px
-    position: relative
+    height: 40px
     cursor: pointer
-    @media (max-width: 768px)
-      display: block
-      left: 90%
     @media (max-width: 560px)
-      left: auto
+      display: flex
+      align-items: center
   &__burgerMobile
     background-color: white
     width: 10px

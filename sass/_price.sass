@@ -3,7 +3,7 @@
     display: flex
     align-items: center
     flex-direction: column
-    margin-bottom: 100px
+    margin-bottom: 70px
   &__title
     background-image: linear-gradient(to right top, #ffffff, #775154, #AF8E6B, #222222, #776154)
   &__textMain
@@ -35,13 +35,11 @@
     transition-property: transform, background
     transition-duration: .5s
     transition-timing-function: ease
-    transform: scale(.95)
     @media (max-width: 691px)
       width: 100%
       transform: scale(.8)
       font-size: 15px
     &.active
-      transform: scale(1.05)
       font-size: 18px
       font-weight: 200
       color: #FFFFFFE6
@@ -157,15 +155,12 @@
     transition: all .5s
     &:hover
       filter: brightness(100%)
-
     @media (max-width: 991px)
       min-height: 315px
     @media (max-width: 768px)
       width: calc(50% - 35px)
     @media (max-width: 560px)
       width: 100%
-    @media (max-width: 440px)
-      min-height: 200px
     &:nth-child(1)
       background-image: url("../img/priceGal/price1.jpg")
     &:nth-child(2)

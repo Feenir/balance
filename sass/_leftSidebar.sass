@@ -3,53 +3,56 @@
   display: flex
   flex-direction: column
   align-items: center
+  justify-content: space-around
   border-right: 1px solid #AF8E7B
   background-color: #232524
-  max-width: 80px
+  min-width: 80px
   left: 0
   height: 100vh
   z-index: 10000
   @media (max-width: 768px)
     display: none
   &__burger
-    position: relative
-    top: 40px
     cursor: pointer
     transition: transform .5s
+    margin: 15px 0
     &:hover
       transform: scale(1.2)
     & img
       width: 27px
   &__contacts, &__social
     display: flex
-    transform: rotate(-90deg)
-    position: relative
+    align-items: center
+    writing-mode: vertical-rl
 
   &__contacts
-    top: calc(50vh - 90px)
+    transform: rotate(180deg)
+  &__social
+    padding: 15px
+
   &__items
     font-size: 15px
     text-transform: uppercase
+    padding: 15px
     & a
       color: #AF8E7B
       letter-spacing: .8px
       transition: color .5s
       &:hover, &:active
         color: white
-
-
-    &:not(:first-child)
-      margin-left: 40px
-  &__social
-    top: 85vh
   &__socialLink
-    transform: rotate(90deg)
+    padding: 5px
     &:hover a svg path
       fill: white
     & svg path
       fill: #AF8E7B
       transition: fill .5s
 
-    &:not(:last-child)
-      margin-left: 15px
+  &__socialsSvg
+    width: 18px
+    height: 18px
+    fill: #AF8E7B
+    transition: fill .5s
+    &:hover
+      fill: white
 

@@ -5,6 +5,9 @@
   background-image: url("../img/aboutBack.jpg")
   opacity: .07
 
+.aboutSwiper
+  width: 100%
+
 .about
   position: relative
   &__wrapper
@@ -15,31 +18,29 @@
     padding-top: 80px
     padding-bottom: 35px
     margin-bottom: 80px
+    background-image: url("../img/about-slider/swiper1.webp")
+    background-repeat: no-repeat
+    background-position: bottom right
+    background-size: 700px
+    @media (max-width: 1280px)
+      background-size: 60%
     @media (max-width: 991px)
+      background-size: 400px
       flex-direction: column
     @media (max-width: 560px)
       padding-bottom: 20px
+      background-position: bottom center
   &__block
     display: flex
     flex-direction: column
-    &:first-child
-      width: calc(50% - 7.5px)
-      padding-bottom: 80px
-      @media (max-width: 991px)
-        width: 100%
-    &:last-child
-      justify-content: flex-end
-      width: calc(50% - 7.5px)
-      position: relative
-      left: -10%
-      bottom: -1px
-      @media (max-width: 991px)
-        width: 100%
-      @media (max-width: 691px)
-        position: relative
-        left: 20px
-      @media (max-width: 560px)
-        min-height: 430px
+    width: calc(50% - 7.5px)
+    padding-bottom: 80px
+    @media (max-width: 991px)
+      width: 100%
+      padding-bottom: 250px
+    @media (max-width: 810px)
+      padding-bottom: 420px
+
   &__title
     background-image: linear-gradient(to right top, #ffffff, #f4f4f4, #5f5f5f, #989898, #f4f4f4)
     margin-bottom: 20px
@@ -70,27 +71,6 @@
       height: 50px
       transition: transform .5s
 
-
-
-
-  &__slide
-    display: block
-    min-width: 650px
-    min-height: 600px
-    background-repeat: no-repeat
-    background-position: bottom
-    background-size: contain
-    position: relative
-    @media (max-width: 560px)
-      background-size: contain
-      min-width: 150px
-      min-height: 430px
-    &:nth-child(1)
-      background-image: url("../img/about-slider/swiper1.webp")
-    &:nth-child(2)
-      background-image: url("../img/about-slider/swiper2.webp")
-    &:nth-child(3)
-      background-image: url("../img/about-slider/swiper3.webp")
   &__discriptionsBlock
     display: flex
     align-items: center
@@ -106,6 +86,8 @@
     padding: 10px 30px
     z-index: 20
     transition: filter .5s
+    @media (max-width: 1440px)
+      padding: 10px 20px
     &:hover
       filter: brightness(75%)
     &:first-child
@@ -124,7 +106,7 @@
       border: 2px solid #AF8E7B
       border-radius: 25px
       color: white
-      @media (max-width: 560px)
+      @media (max-width: 529px)
         margin-top: 20px
 .aboutSwiper
   max-width: 100%
