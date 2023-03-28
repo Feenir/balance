@@ -16,6 +16,7 @@ get_header();
 	            
 	            <h3 class="paper__title title_color">Заявка отправлена!</h3>
 	            <p class="paper__text text_color">Менеджер с Вами свяжется в ближайшее время!</p>
+	            <a class="paper__button" href="<?= home_url('/'); ?>">На главную</a>
 	            <ul class="paper__list">
 		            <li class="paper__items"></li>
 		            <li class="paper__items"></li>

@@ -1,0 +1,34 @@
+.calculator__input:checked + .calculator__label > .calculator__fake-radio:before
+	opacity: 1
+
+.calculator__input:checked + .calculator__label > .calculator__fake-radio,
+.calculator__input:hover + .calculator__label > .calculator__fake-radio
+	border-color: #AF8E7B
+
+.tooltip-position.noUi-tooltip
+	bottom: 15px!important
+
+.calculator__input:checked + .calculator__label > .calculator__fake-input
+	background: linear-gradient(180deg, #E4BAA3 0%, #AC8D7B 100%)
+	-webkit-background-clip: text
+	-webkit-text-fill-color: transparent
+	background-clip: text
+	text-fill-color: transparent
+
+.at-work, .at-home
+	&:before
+		position: absolute
+		content: ''
+		width: 13px
+		height: 13px
+		border-radius: 50%
+		border: 2px solid white
+		bottom: 0
+		right: 5px
+
+.at-work
+	&:before
+		background-color: #70FF00
+.at-home
+	&:before
+		background-color: red

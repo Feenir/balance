@@ -1,0 +1,673 @@
+.calculator
+	position: relative
+	background-color: #1F1F1F
+	border: 1px solid #B08F7C
+	min-width: 1026px
+	@media (max-width: 1010px)
+		min-width: unset
+	&:before
+		position: absolute
+		content: ''
+		background-image: url("../img/backMain.jpg")
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		pointer-events: none
+		opacity: .05
+	&--popup
+		max-width: 1026px
+
+	&__body
+		display: none
+		flex-direction: column
+		position: relative
+		min-height: 525px
+		@media (max-width: 560px)
+			height: 100vh
+		&:before
+			position: absolute
+			content: ''
+			height: calc(100% - 72px)
+			width: 1px
+			background-color: rgba(255, 255, 255, 0.1)
+			right: 445px
+			bottom: 0
+			@media (max-width: 991px)
+				display: none
+				min-height: 768px
+			@media (max-width: 560px)
+				min-height: unset
+		&--active
+			display: flex
+		&--load
+			min-width: 924px
+			@media (max-width: 991px)
+				position: relative
+				min-width: unset
+			&:before
+				display: none
+
+	&__inner
+		&--step-last
+			@media (max-width: 991px)
+				order: 2
+
+	&__title
+		font-family: 'Lato'
+		display: flex
+		align-items: center
+		justify-content: flex-start
+		font-weight: 400
+		font-size: 18px
+		line-height: 21px
+		letter-spacing: 0.02em
+		color: rgba(255, 255, 255, 0.67)
+		@media (max-width: 560px)
+			padding-right: 25px
+			font-size: 14px
+		&:before
+			content: ''
+			display: block
+			background-image: url("data:image/svg+xml,%3Csvg width='14' height='18' viewBox='0 0 14 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4.7999 10.1002C4.7999 10.3919 4.68401 10.6717 4.47772 10.878C4.27143 11.0843 3.99164 11.2002 3.6999 11.2002C3.40816 11.2002 3.12838 11.0843 2.92209 10.878C2.7158 10.6717 2.5999 10.3919 2.5999 10.1002C2.5999 9.80846 2.7158 9.52867 2.92209 9.32238C3.12838 9.11609 3.40816 9.0002 3.6999 9.0002C3.99164 9.0002 4.27143 9.11609 4.47772 9.32238C4.68401 9.52867 4.7999 9.80846 4.7999 10.1002ZM4.7999 13.4002C4.7999 13.6919 4.68401 13.9717 4.47772 14.178C4.27143 14.3843 3.99164 14.5002 3.6999 14.5002C3.40816 14.5002 3.12838 14.3843 2.92209 14.178C2.7158 13.9717 2.5999 13.6919 2.5999 13.4002C2.5999 13.1085 2.7158 12.8287 2.92209 12.6224C3.12838 12.4161 3.40816 12.3002 3.6999 12.3002C3.99164 12.3002 4.27143 12.4161 4.47772 12.6224C4.68401 12.8287 4.7999 13.1085 4.7999 13.4002ZM10.2999 11.2002C10.5916 11.2002 10.8714 11.0843 11.0777 10.878C11.284 10.6717 11.3999 10.3919 11.3999 10.1002C11.3999 9.80846 11.284 9.52867 11.0777 9.32238C10.8714 9.11609 10.5916 9.0002 10.2999 9.0002C10.0082 9.0002 9.72838 9.11609 9.52209 9.32238C9.31579 9.52867 9.1999 9.80846 9.1999 10.1002C9.1999 10.3919 9.31579 10.6717 9.52209 10.878C9.72838 11.0843 10.0082 11.2002 10.2999 11.2002ZM11.3999 13.4002C11.3999 13.6919 11.284 13.9717 11.0777 14.178C10.8714 14.3843 10.5916 14.5002 10.2999 14.5002C10.0082 14.5002 9.72838 14.3843 9.52209 14.178C9.31579 13.9717 9.1999 13.6919 9.1999 13.4002C9.1999 13.1085 9.31579 12.8287 9.52209 12.6224C9.72838 12.4161 10.0082 12.3002 10.2999 12.3002C10.5916 12.3002 10.8714 12.4161 11.0777 12.6224C11.284 12.8287 11.3999 13.1085 11.3999 13.4002ZM6.9999 11.2002C7.29164 11.2002 7.57143 11.0843 7.77772 10.878C7.98401 10.6717 8.0999 10.3919 8.0999 10.1002C8.0999 9.80846 7.98401 9.52867 7.77772 9.32238C7.57143 9.11609 7.29164 9.0002 6.9999 9.0002C6.70816 9.0002 6.42838 9.11609 6.22208 9.32238C6.0158 9.52867 5.8999 9.80846 5.8999 10.1002C5.8999 10.3919 6.0158 10.6717 6.22208 10.878C6.42838 11.0843 6.70816 11.2002 6.9999 11.2002ZM8.0999 13.4002C8.0999 13.6919 7.98401 13.9717 7.77772 14.178C7.57143 14.3843 7.29164 14.5002 6.9999 14.5002C6.70816 14.5002 6.42838 14.3843 6.22208 14.178C6.0158 13.9717 5.8999 13.6919 5.8999 13.4002C5.8999 13.1085 6.0158 12.8287 6.22208 12.6224C6.42838 12.4161 6.70816 12.3002 6.9999 12.3002C7.29164 12.3002 7.57143 12.4161 7.77772 12.6224C7.98401 12.8287 8.0999 13.1085 8.0999 13.4002ZM4.2499 2.4002C3.8123 2.4002 3.39261 2.57403 3.08318 2.88347C2.77374 3.1929 2.5999 3.61259 2.5999 4.0502V5.1502C2.5999 5.5878 2.77374 6.00749 3.08318 6.31692C3.39261 6.62636 3.8123 6.8002 4.2499 6.8002H9.7499C10.1875 6.8002 10.6072 6.62636 10.9166 6.31692C11.2261 6.00749 11.3999 5.5878 11.3999 5.1502V4.0502C11.3999 3.61259 11.2261 3.1929 10.9166 2.88347C10.6072 2.57403 10.1875 2.4002 9.7499 2.4002H4.2499ZM3.6999 4.0502C3.6999 3.90433 3.75785 3.76443 3.86099 3.66129C3.96414 3.55814 4.10403 3.5002 4.2499 3.5002H9.7499C9.89577 3.5002 10.0357 3.55814 10.1388 3.66129C10.242 3.76443 10.2999 3.90433 10.2999 4.0502V5.1502C10.2999 5.29606 10.242 5.43596 10.1388 5.5391C10.0357 5.64225 9.89577 5.7002 9.7499 5.7002H4.2499C4.10403 5.7002 3.96414 5.64225 3.86099 5.5391C3.75785 5.43596 3.6999 5.29606 3.6999 5.1502V4.0502ZM13.5999 15.0502C13.5999 15.7795 13.3102 16.479 12.7944 16.9947C12.2787 17.5105 11.5792 17.8002 10.8499 17.8002H3.1499C2.42056 17.8002 1.72108 17.5105 1.20536 16.9947C0.689634 16.479 0.399902 15.7795 0.399902 15.0502V2.9502C0.399902 2.22085 0.689634 1.52138 1.20536 1.00565C1.72108 0.489927 2.42056 0.200195 3.1499 0.200195H10.8499C11.5792 0.200195 12.2787 0.489927 12.7944 1.00565C13.3102 1.52138 13.5999 2.22085 13.5999 2.9502V15.0502ZM12.4999 2.9502C12.4999 2.51259 12.3261 2.0929 12.0166 1.78347C11.7072 1.47403 11.2875 1.3002 10.8499 1.3002H3.1499C2.7123 1.3002 2.29261 1.47403 1.98318 1.78347C1.67374 2.0929 1.4999 2.51259 1.4999 2.9502V15.0502C1.4999 15.4878 1.67374 15.9075 1.98318 16.2169C2.29261 16.5264 2.7123 16.7002 3.1499 16.7002H10.8499C11.2875 16.7002 11.7072 16.5264 12.0166 16.2169C12.3261 15.9075 12.4999 15.4878 12.4999 15.0502V2.9502Z' fill='white' fill-opacity='0.67'/%3E%3C/svg%3E%0A")
+			background-repeat: no-repeat
+			background-size: cover
+			background-position: center
+			min-width: 13px
+			height: 18px
+			margin-right: 12px
+
+	&__header
+		border-bottom: 1px solid rgba(255, 255, 255, 0.1)
+		padding: 25px 40px 25px 40px
+		margin-bottom: 20px
+		@media (max-width: 768px)
+			padding: 20px 20px 20px 24px
+		&--progressbar
+			margin-bottom: 0
+
+	&__wrapper
+		display: flex
+		justify-content: space-between
+		align-items: stretch
+		padding: 0 40px 45px 40px
+		@media (max-width: 991px)
+			flex-direction: column
+		@media (max-width: 768px)
+			padding: 0 20px 45px 20px
+		&--progressbar
+			justify-content: center
+			align-items: center
+			padding: 0 40px
+			margin-top: auto
+			margin-bottom: auto
+		&--last
+			align-items: center
+			@media (max-width: 768px)
+				margin-top: 37px
+
+	&__inner-title
+		font-weight: 500
+		font-size: 24px
+		line-height: 28px
+		letter-spacing: 0.02em
+		color: #FFFFFF
+		margin-bottom: 40px
+		@media (max-width: 768px)
+			font-size: 18px
+
+
+	&__button
+		position: relative
+		display: inline-flex
+		align-items: center
+		justify-content: center
+		text-align: center
+		font-size: 18px
+		color: #303030
+		background-image: linear-gradient(88.36deg, #BB6D22 2.8%, #F8B857 28.86%, #FFCD89 50.41%, #F8C16D 73.97%, #C38137 99.02%)
+		background-repeat: no-repeat
+		background-position: 500% 0, 0 0, 0 0, 0 100%, 0 4px, 0 calc(100% - 4px)
+		border-radius: 70px
+		padding: 36px 30px
+		transition: filter .5s
+		overflow: hidden
+		z-index: 1
+		max-height: 99px
+		min-width: 370px
+		@media (max-width: 560px)
+			max-height: 60px
+			min-width: unset
+			width: 100%
+		&:before
+			position: absolute
+			content: ''
+			top: 0
+			left: 0
+			right: 0
+			bottom: 0
+			background-size: 200% 100%, auto, 100% 2px, 100% 2px, 100% 1px, 100% 1px
+			background-image: linear-gradient(45deg, rgba(255, 255, 255, .0) 30%, rgba(255, 255, 255, .8), rgba(255, 255, 255, .0) 70%)
+			background-repeat: no-repeat
+			background-position: -200% 0, 0 0, 0 0, 0 100%, 0 4px, 0 calc(100% - 4px)
+			animation: shine 5s ease reverse infinite
+			pointer-events: none
+		&:hover
+			opacity: .6
+
+
+	&__button-text
+		display: flex
+		align-items: center
+		flex-direction: row
+		font-weight: 500
+		font-size: 24px
+		line-height: 28px
+		text-align: center
+		letter-spacing: 0.06em
+		color: #323232
+		white-space: nowrap
+		@media (max-width: 768px)
+			font-size: 17px
+		&:after
+			content: url("data:image/svg+xml,%3Csvg width='27' height='26' viewBox='0 0 27 26' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.625 13L21.375 13' stroke='%23323232' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M13.5 5.41683L21.375 13.0002L13.5 20.5835' stroke='%23323232' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A")
+			margin-left: 10px
+			transform: translateY(4px)
+
+	&__tariff
+		display: flex
+		flex-direction: row
+		gap: 36px
+		margin-bottom: 30px
+		@media (max-width: 991px)
+			justify-content: space-between
+		@media (max-width: 768px)
+			gap: 20px
+		@media (max-width: 374px)
+			flex-direction: column
+
+	&__radio-inner
+		display: flex
+		flex-direction: column
+		gap: 14px
+
+	&__tariff-title, &__staff-title
+		font-weight: 500
+		font-size: 24px
+		line-height: 28px
+		letter-spacing: 0.02em
+		color: #FFFFFF
+		margin-bottom: 20px
+		@media (max-width: 768px)
+			font-size: 18px!important
+
+	&__label
+		display: flex
+		align-items: center
+		cursor: pointer
+
+	&__fake-input
+		font-weight: 400
+		font-size: 16px
+		line-height: 19px
+		text-align: center
+		text-transform: uppercase
+		color: rgba(255, 255, 255, 0.75)
+		@media (max-width: 768px)
+			font-size: 14px
+
+	&__fake-radio
+		position: relative
+		display: flex
+		align-items: center
+		justify-content: center
+		width: 20px
+		height: 20px
+		border-radius: 50%
+		border: 1px solid #FFFFFF
+		margin-right: 10px
+		transition: all .5s
+		@media (max-width: 768px)
+			width: 16px
+			height: 16px
+		&:before
+			content: ''
+			display: block
+			width: 16px
+			height: 16px
+			border-radius: 50%
+			background-image: linear-gradient(180deg, #E4BAA3 0%, #AC8D7B 100%)
+			transition: opacity .5s
+			opacity: 0
+			@media (max-width: 768px)
+				width: 12px
+				height: 12px
+
+	&__input
+		position: absolute
+		visibility: hidden
+		opacity: 0
+		width: 0
+		height: 0
+		left: 0
+		top: 0
+
+	&__tariff-right .calculator__fake-input
+		text-transform: capitalize
+
+	&__tariff-right
+		@media (max-width: 1300px)
+			display: flex
+			flex-direction: column
+			justify-content: flex-end
+
+
+	&__staff-label
+		display: flex
+		align-items: center
+		justify-content: flex-start
+		width: 90px
+		height: 30px
+		border: 1px solid #D5C3B9
+		border-radius: 5px
+		overflow: hidden
+
+	&__staff-input
+		padding-left: 10px
+		font-weight: 400
+		font-size: 16px
+		line-height: 19px
+		color: #D5C3B9
+
+	&__close
+		position: absolute
+		top: 25px
+		right: 40px
+		cursor: pointer
+		@media (max-width: 991px)
+			right: 20px
+
+	&__right
+		display: inline-flex
+		flex-direction: column
+		justify-content: space-between
+		align-items: center
+		max-width: 370px
+		padding: 28px 0 0 115px
+		@media (max-width: 991px)
+			padding: 0
+		@media (max-width: 560px)
+			align-items: flex-start
+			max-width: unset
+		&--last
+			position: relative
+			justify-content: flex-start
+			padding: 0
+			@media (max-width: 991px)
+				margin-bottom: 50px
+				&:before
+					content: ''
+					position: absolute
+					bottom: -30px
+					width: 100vw
+					height: 1px
+					background-color: rgba(255, 255, 255, 0.1)
+
+	&__staff-inner
+		display: flex
+		flex-direction: column
+		@media (max-width: 991px)
+			margin-bottom: 20px
+		&--right
+			max-width: 320px
+			@media (max-width: 991px)
+				display: none
+
+
+	&__photo-inner
+		display: flex
+		align-items: center
+		margin-bottom: 20px
+
+	&__img-inner
+		position: relative
+		width: 80px
+		height: 80px
+		border-radius: 50%
+		margin-right: 25px
+
+	&__staff-text-inner
+		display: flex
+		flex-direction: column
+		align-items: flex-start
+
+	&__staff-name
+		font-weight: 500
+		font-size: 24px
+		line-height: 28px
+		letter-spacing: 0.02em
+		color: #FFFFFF
+		margin-bottom: 8px
+
+	&__staff-post
+		font-weight: 500
+		font-size: 15px
+		line-height: 18px
+		letter-spacing: 0.02em
+		color: rgba(255, 255, 255, 0.63)
+
+	&__text-quiz
+		font-weight: 500
+		font-size: 15px
+		line-height: 18px
+		letter-spacing: 0.02em
+		color: rgba(255, 255, 255, 0.85)
+		text-align: left
+		@media (max-width: 991px)
+			text-align: center
+
+	&__progressbar
+		width: 66px
+
+	&__arrow-back
+		margin-bottom: 35px
+		cursor: pointer
+		@media (max-width: 991px)
+			position: absolute
+			align-self: flex-start
+			top: 100px
+			left: 24px
+
+	&__form-text
+		font-weight: 400
+		font-size: 20px
+		line-height: 23px
+		letter-spacing: 0.02em
+		color: #FFFFFF
+		max-width: 524px
+		margin-bottom: 25px
+		@media (max-width: 768px)
+			font-size: 14px
+
+
+	&__price-text
+		font-family: 'TD-Neumann'
+		font-weight: 400
+		font-size: 36px
+		line-height: 53px
+		text-align: center
+		letter-spacing: 0.02em
+		background: linear-gradient(180deg, #E4BAA3 0%, #AC8D7B 100%)
+		-webkit-background-clip: text
+		-webkit-text-fill-color: transparent
+		background-clip: text
+		text-fill-color: transparent
+		margin-bottom: 25px
+		@media (max-width: 991px)
+			line-height: 36px
+			font-size: 30px
+		@media (max-width: 768px)
+			font-size: 24px
+			line-height: 30px
+		@media (max-width: 560px)
+			text-align: left
+			margin-bottom: 0
+
+	&__price
+		&--blur
+			background: rgba(255, 255, 255, 0.01)
+			filter: blur(12.5px)
+			backdrop-filter: blur(8px)
+
+	&__form
+		display: flex
+		flex-direction: column
+
+	&__last-label
+		position: relative
+		display: flex
+		align-items: center
+		max-width: 270px
+		cursor: pointer
+		margin-bottom: 15px
+		transition: opacity .5s
+		&:hover
+			opacity: .6
+		&--button
+			margin-bottom: 30px
+
+		&:before
+			content: ""
+			position: absolute
+			top: 0
+			left: 0
+			right: 0
+			bottom: 0
+			border-radius: 5px
+			border: 1px solid transparent
+			background: linear-gradient(180deg, #E4BAA3 0%, #AC8D7B 100%) border-box
+			-webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0)
+			-webkit-mask-composite: destination-out
+
+	&__last-input
+		min-height: 50px
+		width: 100%
+		padding-left: 20px
+		color: white
+		font-weight: 500
+		font-size: 18px
+		line-height: 21px
+		&::placeholder
+			background: linear-gradient(180deg, #E4BAA3 0%, #AC8D7B 100%)
+			-webkit-background-clip: text
+			-webkit-text-fill-color: transparent
+			background-clip: text
+			text-fill-color: transparent
+
+	&__last-button
+		display: flex
+		align-items: center
+		justify-content: center
+		background: linear-gradient(88.36deg, #BB6D22 2.8%, #F8B857 28.86%, #FFCD89 50.41%, #F8C16D 73.97%, #C38137 99.02%)
+		opacity: 0.9
+		border-radius: 31px
+		font-weight: 500
+		font-size: 18px
+		line-height: 21px
+		letter-spacing: 0.06em
+		text-transform: uppercase
+		color: #1F1F1F
+		min-height: 60px
+		max-width: 270px
+		margin-bottom: 10px
+
+	&__privacy-policy-inner
+		display: flex
+		align-items: center
+		line-height: 12px
+		max-width: 300px
+
+	&__privacy-policy
+		color: #A98A78
+		font-size: 10px
+		cursor: pointer
+		transition: opacity .5s
+		&:hover
+			opacity: .8
+		& span
+			color: #BCBCBC
+		& a
+			color: #A98A78
+			transition: opacity .5s
+			&:hover
+				opacity: .6
+		& br
+			@media (max-width: 768px)
+				display: none
+
+	&__real-input
+		position: absolute
+		visibility: hidden
+		opacity: 0
+		width: 0
+		height: 0
+		left: 0
+		top: 0
+
+	&__thanks
+		font-size: 32px
+		line-height: 47px
+		letter-spacing: 0.02em
+		background: linear-gradient(180deg, #E4BAA3 0%, #AC8D7B 100%)
+		-webkit-background-clip: text
+		-webkit-text-fill-color: transparent
+		background-clip: text
+		text-fill-color: transparent
+		margin-bottom: 15px
+		@media (max-width: 1080px)
+			width: 90%
+		@media (max-width: 991px)
+			width: 100%
+			text-align: center
+			line-height: 32px
+			font-size: 24px
+		@media (max-width: 560px)
+			text-align: left
+
+	&__thanks-text
+		font-weight: 400
+		font-size: 18px
+		line-height: 21px
+		letter-spacing: 0.02em
+		color: #DCDCDC
+		margin-bottom: 28px
+		@media (max-width: 991px)
+			text-align: center
+			font-size: 14px
+		@media (max-width: 560px)
+			text-align: left
+
+	&__back-first
+		position: relative
+		display: flex
+		align-items: center
+		justify-content: center
+		font-weight: 500
+		font-size: 18px
+		line-height: 21px
+		letter-spacing: 0.06em
+		text-transform: uppercase
+		background: linear-gradient(88.36deg, #BB6D22 2.8%, #F8B857 28.86%, #FFCD89 50.41%, #F8C16D 73.97%, #C38137 99.02%)
+		-webkit-background-clip: text
+		-webkit-text-fill-color: transparent
+		background-clip: text
+		text-fill-color: transparent
+		min-height: 60px
+		max-width: 270px
+		width: 100%
+		&:before
+			content: ""
+			position: absolute
+			top: 0
+			left: 0
+			right: 0
+			bottom: 0
+			border-radius: 30px
+			border: 2px solid transparent
+			background: linear-gradient(88.36deg, #C9A255 2.8%, #E3C673 28.86%, #FEFDC8 50.41%, #E3C673 73.97%, #C9A255 99.02%) border-box
+			-webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0)
+			-webkit-mask-composite: destination-out
+
+	&__arrow
+		margin-right: 14px
+
+	&__step
+		display: none
+		flex-direction: column
+		@media (max-width: 991px)
+			align-items: center
+
+	&__step-one
+		@media (max-width: 1080px)
+			width: 90%
+		@media (max-width: 991px)
+			width: 100%
+
+	&__thanks-inner
+		position: relative
+		top: -15px
+		min-height: 310px
+		display: flex
+		flex-direction: column
+		justify-content: center
+		@media (max-width: 991px)
+			align-items: center
+			justify-content: flex-start
+			min-height: unset
+		@media (max-width: 560px)
+			align-items: flex-start
+
+	&__hidden-field
+		display: none
+
+@import "range"
+@import "calculator-popup"
+@import "calculator-custom"
+
+.price-popup
+	font-weight: 500
+	font-size: 48px
+	line-height: 56px
+	color: #FFFFFF
+	text-align: center
+	@media (max-width: 1440px)
+		font-size: 38px
+	@media (max-width: 991px)
+		font-size: 30px
+	@media (max-width: 768px)
+		font-size: 22px
+
+.fake-checkbox
+	display: flex
+	align-items: center
+	justify-content: center
+	border-radius: 2px
+	background: #8B7162
+	min-width: 14px
+	max-height: 14px
+	margin-right: 8px
+	&:before
+		content: url("data:image/svg+xml,%3Csvg width='11' height='8' viewBox='0 0 11 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9.83366 1.25L3.87533 7.20833L1.16699 4.5' stroke='white' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A")
+		transform: translateY(-2px)
+		transition: opacity .5s
+		opacity: 0
+
+.calculator__real-input:checked + .calculator__privacy-policy-inner > .fake-checkbox:before
+	opacity: 1
+
+.calculator-step-active
+	display: flex
+
+#step-three
+	@media (max-width: 560px)
+		padding-bottom: 20px
+
+.calculator-page
+	& h2
+		margin-bottom: 50px
+	& .calculator__inner
+		width: 100%
+	& .calculator__body
+		@media (max-width: 560px)
+			height: 645px
+		@media (max-width: 374px)
+			height: 768px
+	& .calculator__title
+		padding-right: 0
+	& .calculator__tariff
+		gap: 55px
+
+
+
+
+

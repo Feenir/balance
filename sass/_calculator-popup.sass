@@ -1,0 +1,92 @@
+.calculator-popup-position
+	position: absolute
+	top: 35px
+	right: 140px
+	@media (max-width: 1440px)
+		top: -30px
+	@media (max-width: 1320px)
+		right: 152px
+	@media (max-width: 1110px)
+		top: 60px
+	@media (max-width: 968px)
+		top: 170px
+	@media (max-width: 620px)
+		top: 420px
+	@media (max-width: 560px)
+		top: 260px
+	@media (max-width: 460px)
+		top: 315px
+		right: 122px
+
+
+
+.calculator-popup
+	position: absolute
+	border: 2px solid rgba(201,162,85, .2)
+	border-radius: 10px
+	filter: blur(.5px)
+	padding: 9px
+	transition: opacity .5s
+	animation: up-down 5s linear infinite
+	@media (max-width: 460px)
+		padding: 5px
+		animation: up-down-mobile 2s linear infinite
+	&:hover
+		opacity: .6
+	&__inner
+		position: relative
+		&:before
+			content: ""
+			position: absolute
+			top: 0
+			left: 0
+			right: 0
+			bottom: 0
+			border-radius: 10px
+			border: 2px solid transparent
+			background: linear-gradient(88.36deg, #C9A255 2.8%, #E3C673 28.86%, #FEFDC8 50.41%, #E3C673 73.97%, #C9A255 99.02%) border-box
+			-webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0)
+			-webkit-mask-composite: destination-out
+
+	&__body
+		display: flex
+		flex-direction: column
+		align-items: center
+		justify-content: center
+		padding: 15px 14px 7px 14px
+		@media (max-width: 460px)
+			padding: 10px
+
+	&__svg-icon
+		margin-bottom: 6px
+	&__text
+		font-weight: 400
+		font-size: 14px
+		line-height: 17px
+		text-align: center
+		letter-spacing: 0.045em
+		background: linear-gradient(88.36deg, #C9A255 2.8%, #E3C673 28.86%, #FEFDC8 50.41%, #E3C673 73.97%, #C9A255 99.02%)
+		-webkit-background-clip: text
+		-webkit-text-fill-color: transparent
+		background-clip: text
+		text-fill-color: transparent
+		margin-top: 6px
+		@media (max-width: 460px)
+			font-size: 12px
+
+@keyframes up-down
+	100%
+		top: 150px
+	50%
+		top: 100px
+	0%
+		top: 150px
+
+@keyframes up-down-mobile
+	100%
+		top: 120px
+	50%
+		top: 100px
+	0%
+		top: 120px
+

@@ -1,0 +1,41 @@
+.progressbar {
+    max-width: 150px;
+    font-size: 10px;
+    --color: #A38573;
+    --percent: 0; /* процент, насколько заполнен круг */
+    --PI: 3.141592;
+    --r: 30;
+    --strokeWidth: 2;
+    --total: calc( var(--PI) * var(--r));
+}
+
+.progressbar circle {
+    r: var(--r);
+}
+
+.progressbar text {
+    fill: white;
+}
+
+.progressbar__percent {
+    font-size: 16px;
+}
+
+.progressbar__track {
+    fill: transparent;
+    stroke: #FFFFFF;
+    stroke-width: var(--strokeWidth);
+}
+
+.progressbar__thumb {
+    fill: transparent;
+    --strokeDasharray: calc(2 * var(--total) * var(--percent) / 100 ) calc(2 * var(--total));
+    stroke-linecap: round;
+    stroke-dasharray: var(--strokeDasharray);
+    stroke: var(--color);
+    stroke-width: var(--strokeWidth);
+
+    transform-origin: center;
+    transform-box: fill-box;
+    transform: rotate(-90deg);
+}

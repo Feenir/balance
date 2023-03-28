@@ -269,5 +269,110 @@
       right: 50px
 
 
+.personal-accountBack
+  display: none
+  background: #000000
+  opacity: 0.5
+  width: 100%
+  height: 100%
+  position: fixed
+  z-index: 200
+  left: 0px
+  top: 0px
+
+.personal-account
+  position: fixed
+  z-index: 201
+  display: none
+  width: 372px
+  height: auto
+  box-shadow: 0px 0px 35px rgba(0, 0, 0, 70%)
+  padding: 0px 0px 4px 0px
+  top: 50%
+  left: 50%
+  transform: translate(-50%, -50%)
+  background-color: #252525
+  &__form
+    padding: 20px
+    font-family: 'Lato'
+    color: white!important
+    font-size: 16px
+
+  &__input
+    font-size: 16px !important
+    border: 1px solid #af8e7b !important
+    border-radius: 25px
+    background-color: #f9f9f9!important
+    box-sizing: border-box
+    padding: 15px!important
+
+  &__enter
+    display: flex
+    align-items: center
+    justify-content: space-between
+    margin-right: 30px
+    margin-top: 20px
+
+  &__button
+    display: inline-flex
+    align-items: center
+    justify-content: center
+    text-align: center
+    font-size: 18px
+    color: #ebebeb!important
+    background-image: linear-gradient(180deg,#DCC29D00 0%,#af8e7b 100%)
+    border: 2px solid #af8e7b
+    border-radius: 25px
+    padding: 8px 15px
+    transition: filter .5s
+    cursor: pointer
+    min-width: 150px
+
+
+.personal-account_show
+  display: block
+
+#multibuhgalterAuthWinT, #multibuhgalterAuthWinClose
+  color: white!important
+  background: none!important
+
+#multibuhgalterAuthReme2
+  border-top: none!important
+  & a
+    color: white!important
+
+.popup-calculator
+  position: fixed
+  display: none
+  align-items: center
+  justify-content: center
+  width: 100%
+  height: 100%
+  top: 0
+  left: 0
+  z-index: 10000
+  background-color: rgba(0,0,0,.4)
+  @media (max-width: 768px)
+    padding-top: 12px
+    overflow-y: auto
+  @media (max-width: 560px)
+    padding-top: 0
+    align-items: flex-start
+    height: 100%
+    padding-bottom: 12px
+
+  &__body
+    overflow: hidden
+    @media (max-width: 991px)
+      width: 100%
+
+
+
+
+
+
+
+
+
 
 

@@ -25,12 +25,98 @@ foreach ( $_POST as $key => $value ) {
 }
 $message = "<table style='width: 100%;'>$message</table>";
 
+
 // Правим кодировку
 function adopt($text) {
     return '=?UTF-8?B?'.Base64_encode($text).'?=';
 }
 
 $form_subject = adopt($form_subject);
+
+/* Настройки некоторых почтовых сервисов
+
+// Яндекс
+$mail->Host = 'ssl://smtp.yandex.ru';
+$mail->Port = 465;
+$mail->Username = 'Логин';
+$mail->Password = 'Пароль';
+
+// Mail.RU
+$mail->Host = 'ssl://smtp.mail.ru';
+$mail->Port = 465;
+$mail->Username = 'Логин';
+$mail->Password = 'Пароль';
+
+// GMail
+$mail->Host = 'ssl://smtp.gmail.com';
+$mail->Port = 465;
+$mail->Username = 'Логин';
+$mail->Password = 'Пароль';
+
+Если возникает ошибка при отправки почты, то нужно отключить двухфакторную авторизацию и разблокировать «ненадежные приложения» в настройках конфиденциальности аккаунта https://myaccount.google.com/security?pli=1
+
+// Рамблер
+$mail->Host = 'ssl://smtp.rambler.ru';
+$mail->Port = 465;
+$mail->Username = 'Логин';
+$mail->Password = 'Пароль';
+
+// iCloud
+$mail->Host = 'ssl://smtp.mail.me.com';
+$mail->Port = 587;
+$mail->Username = 'Логин';
+$mail->Password = 'Пароль';
+
+// Мастерхост
+$mail->Host = 'ssl://smtp.masterhost.ru';
+$mail->Port = 465;
+$mail->Username = 'Логин';
+$mail->Password = 'Пароль';
+
+// Timeweb
+$mail->Host = 'ssl://smtp.timeweb.ru';
+$mail->Port = 465;
+$mail->Username = 'Логин';
+$mail->Password = 'Пароль';
+
+// Хостинг Центр (hc.ru)
+Доступ к сторонним почтовым серверам по SMTP-портам (25, 465, 587) ограничен, разрешена отправка не более 300 сообщений в сутки.
+$mail->Host = 'smtp.домен.ru';
+$mail->SMTPSecure = 'TLS';
+$mail->Port = 25;
+$mail->Username = 'Логин';
+$mail->Password = 'Пароль';
+
+// REG.RU
+Имя сервера можно узнать в разделе «Информация о включенных сервисах и паролях доступа»
+$mail->Host = 'ssl://serverXXX.hosting.reg.ru';
+$mail->Port = 465;
+$mail->Username = 'Логин';
+$mail->Password = 'Пароль';
+
+// ДЖИНО
+В разделе «Услуги» нужно включить опцию «SMTP-сервер»
+$mail->Host = 'ssl://smtp.jino.ru';
+$mail->Port = 465;
+$mail->Username = 'Логин';
+$mail->Password = 'Пароль';
+
+// nic.ru
+В настройках веб-сервера необходимо включить PHP расширение «openssl»
+$mail->Host = 'ssl://mail.nic.ru';
+$mail->Port = 465;
+$mail->Username = 'Логин';
+$mail->Password = 'Пароль';
+
+// beget.com
+$mail->Host = 'ssl://smtp.beget.com';
+$mail->Port = 465;
+$mail->Username = 'Логин';
+$mail->Password = 'Пароль';
+
+Выбирайте подходящие и вставляйте в соответствующие переменные ниже */
+
+
 
 // Настройки
 $mail = new PHPMailer;
@@ -42,16 +128,14 @@ $mail->Password = 'Qazwsx123'; // Ваш пароль
 $mail->SMTPSecure = 'ssl';
 $mail->Port = 465;
 $mail->CharSet = 'utf-8';
-$mail->setFrom('boxedyou@ya.ru', 'balanse-expert'); // Ваш Email и Имя отправителя
-//$mail->addAddress('weca121@ya.ru, balanse-expert@ya.ru'); // Email получателя
-//$mail->addAddress('ab0gacheva@yandex.ru, weca121@ya.ru, balanse-expert@yandex.ru'); // Email получателя
+$mail->setFrom('boxedyou@ya.ru', 'septikpronn'); // Ваш Email и Имя отправителя
 $mail->addAddress('weca121@ya.ru'); // Email получателя
-//$mail->addAddress('balanse-expert@yandex.ru'); // Email получателя
+$mail->addAddress('septikpro-nn@ya.ru'); // Email получателя
 // $mail->addAddress('example@gmail.com'); // Еще один email, если нужно.
 
 // Письмо
 $mail->isHTML(true);
-$mail->Subject = "$form_subject - balanse-expert"; // Заголовок письма
+$mail->Subject = "$form_subject - septikpronn"; // Заголовок письма
 $mail->Body = $message; // Текст письма
 
 # Проверяем, прикреплен ли файл
@@ -80,19 +164,19 @@ if(!$mail->send()) {
 
 function amoAuth() {
 
-    $subdomain = 'accountant'; //Поддомен нужного аккаунта
+    $subdomain = 'septikpronn'; //Поддомен нужного аккаунта
     $link = 'https://' . $subdomain . '.amocrm.ru'; //Формируем URL для запроса
 
     $refresh_token = file_get_contents('./session.txt');
     $data = [
-        'client_id' => '7a15b872-f83e-4a2c-8621-6ebc9f82f9d1',
-        'client_secret' => 'vgSWSKvhf1RcmE4sLjIlX6EUYP1CcnKhOwzwJUZTT9tekk0t9jjVUOkNPDaCFESj',
+        'client_id' => '002b1055-27d2-4654-858a-8096be27c183',
+        'client_secret' => '13Cu1QHtH8zMQwfzaYE05AAPF3cFyhyfrV4zfqJFoXB4850BwTXJJopDANLLioYW',
         'redirect_uri' => 'https://aquastoknn.ru/',
-//        'grant_type' => 'refresh_token', // повторная авторизация
-//        'refresh_token' => $refresh_token, // повторная авторизация
+        'grant_type' => 'refresh_token', // повторная авторизация
+        'refresh_token' => $refresh_token, // повторная авторизация
 
-            'grant_type'    => 'authorization_code', // первичная авторизация
-            'code'    => 'def50200c827ac76d2543c5556d8d6ed52c1d71f154dc981b80271c2b8ab986d172451e08b85faf5b3712c141fa7e90e13efe836ef57fc05c064d363ecc09cf831d349ea7e38e5c9c8ad18e7f0d1acb60d026b21d582ad36844cdc12896e02a94ff561ed844434635024db33b3da4f81628b6d77a5911f02c4d63938e3d3bbe04143af36a0e4ef762f76e18606dc5401c0d4599c6ca56d0e03053ae49759c6b28e643cae96d9b9cebbd0b80a88eace801221bfdfd8e9ddd5390588c1a7c3d8aac0eee702f191a9fda2630f0cc58265036a5ed3603c6cc0e14e9bad316e2a985b2f7a35fb54c74cc8865fdbc5c9ecaaefb58bc6268337be085c08d6104b9b86bd2e3267eba724558f614387313528ad1c940a17b7547bcd9146928f349700d9ae8971fd23707751289f1d0bd1696b2dedf954ff5c4697c05930fca42950e08e4374aa6a3bb08d2a10b7bc19a23a3f9a42e2bd557cc1e8fffef16d3843d517411081fbf0722492aca421816b4a5479ac5cfe98c7dc5b1f3c528d0e0d9cb59afcdb2455b023423a5e30b57b35ac415023e27b37d6a934080028011556e23b8bcbabd47a7ffd2e0a0f30cb15862307c51f60bc43542c47e526889b48a4c3384e0c23cd625141a8', // первичная авторизация код из админки
+        //    'grant_type'    => 'authorization_code', // первичная авторизация
+        //    'code'    => 'def502007cc9a7e23e864955e9fab764b2eaf3426724591204ff1d5d58b898a6220ee7aaaa17da5f5f1dd0feb8fa06542e13e0c50707eade65c6089604a6a622de20e7fb10419d1ff804af9d6ae0bd0df4a37a6dc563a4407e2c25f9a5be36645ffd313d9d8fd3f226445171f306d662ab940b5ade2d4adcc69e8ad9e021acb8ba55f18be4ee54e4877bb059273445a959f8232a2821ec25b385e6984ce49983f10103a79c0b733784bd325eb6dfb8e25a77b09a4c1bb29ce79840e7a9ac0406256f0ac21cee9c087d947a67bfa85a6c08c1e2ad96c21f284b8ac5642a9517b84d0e8e9194c3bd55c41f4d8668886f20fda276302193014b473688b3fd9baf5793fe359f261018cf0b19ee18369a152f98e8c3d6aae27a46aef398382501cbea84b8c4ed18ecec14eee2f6ddcd1007199d7c60e4d8467c2b4106ad718ba0e75466a18f6c12a4b6f7f27bbe7330bcb0c2227f0f39d740834cc31ed70e91c94c25295bc6b23c25dd3223895043d9398c8aa15c97a974644639830ee3275571e2be1f22ddada5e6d13b0474239317d461d66df94d0744d9da5c93335af5937f69546f53eb8b9d7f7d563161ec93f70d1cb96f46ed651635480ee5391a57f5a8522ec3', // первичная авторизация код из админки
     ];
 
     $curl = curl_init();
@@ -145,6 +229,10 @@ $contactName = htmlspecialchars(strip_tags(trim($_POST['Имя'])));
 $contactPhone = htmlspecialchars(strip_tags(trim($_POST['Телефон'])));
 $contactEmail = '';
 
+$leadQuiz1 = htmlspecialchars(strip_tags(trim($_POST['Уровень'])));
+$leadQuiz2 = htmlspecialchars(strip_tags(trim($_POST['Проживание'])));
+$leadQuiz3 = htmlspecialchars(strip_tags(trim($_POST['Грунт'])));
+$leadQuiz4 = htmlspecialchars(strip_tags(trim($_POST['Людей'])));
 $utm_source = htmlspecialchars(strip_tags(trim($_POST['utm_source'])));
 $utm_medium = htmlspecialchars(strip_tags(trim($_POST['utm_medium'])));
 $utm_campaign = htmlspecialchars(strip_tags(trim($_POST['utm_campaign'])));
@@ -156,6 +244,10 @@ $arrContactParams = [
     "namePerson"	=> $contactName, // имя
     "phonePerson"	=> $contactPhone, // телефон
     "emailPerson"	=> $contactEmail, // почта
+    "quiz1"	=> $leadQuiz1,
+    "quiz2"	=> $leadQuiz2,
+    "quiz3"	=> $leadQuiz3,
+    "quiz4"	=> $leadQuiz4,
     "utm_source"	=> $utm_source,
     "utm_medium"	=> $utm_medium,
     "utm_campaign"	=> $utm_campaign,
@@ -196,7 +288,7 @@ if ( $contactEmail ) {
 
 function addLead($access_token, $arrContactParams) {
 
-    $link = 'https://accountant.amocrm.ru';
+    $link = 'https://septikpronn.amocrm.ru';
     $lead = [
         //'name'                => $form_subject . '–' . $leadName,
         'name'                => $arrContactParams['nameForm'] . ' – ' . $arrContactParams['namePerson'] ,
@@ -205,6 +297,22 @@ function addLead($access_token, $arrContactParams) {
         'date_create'         => time(),
         'pipeline_id'         => 4355272, // ID воронки, в которую добавляется сделка
         'custom_fields'	=> [
+            [
+                'id'	=> 1079079,
+                "values" => [["value" => $arrContactParams["quiz1"],]]
+            ],
+            [
+                'id'	=> 1079081,
+                "values" => [["value" => $arrContactParams["quiz2"],]]
+            ],
+            [
+                'id'	=> 1079083,
+                "values" => [["value" => $arrContactParams["quiz3"],]]
+            ],
+            [
+                'id'	=> 1079085,
+                "values" => [["value" => $arrContactParams["quiz4"],]]
+            ],
             [
                 'id'	=> 1080347,
                 "values" => [["value" => $arrContactParams["utm_source"],]]
@@ -264,12 +372,15 @@ function addLead($access_token, $arrContactParams) {
 }
 
 
+
+
+
 // –––––––––––––––––––––––––––
 // добавление контакта
 // –––––––––––––––––––––––––––
 
 function addContact($access_token, $leadId = false, $arrContactParams, $contactCF) {
-    $link = 'https://accountant.amocrm.ru';
+    $link = 'https://septikpronn.amocrm.ru';
     $contact = [
         'name'          => $arrContactParams['namePerson'],
         'custom_fields'       => $contactCF,
@@ -317,7 +428,7 @@ function addContact($access_token, $leadId = false, $arrContactParams, $contactC
 // –––––––––––––––––––––––––––
 /*
 function addNote( $noteData ) {
-    $link = 'https://accountant.amocrm.ru';
+    $link = 'https://septikpronn.amocrm.ru';
 
     $lead = '9309617';
     $noteMess = 'текст заметки';

@@ -16,9 +16,6 @@
 	<!--    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>-->
 	<!--    <link rel="stylesheet" href="css/fancybox.css">-->
 	<!--    <link rel="stylesheet" href="css/style.css">-->
-    <title><?php bloginfo(); ?></title>
-	
-	
 	<?php if (current_user_can('manage_options')) : endif; ?>
 	
 	<!-- Marquiz script start -->
@@ -117,7 +114,8 @@
 			<li class="header__items header__items_map"><a target="_blank" href="https://yandex.ru/maps/?um=constructor%3Ae02c86f800c09c04ce510101bdfc6246508b03b3dc0b39e70cf18c5b8e1bc8e4&source=constructorLink">г.Москва, БЦ Сириус парк 
 					<span>Посмотреть на карте</span></a>
 			</li>
-			<li class="header__items"><a href="mailto:accountant@balanse-expert.ru">accountant@balanse-expert.ru</a></li>
+			<li class="header__items header__items--copy"><a class="js-mail_copy" href="mailto:accountant@balanse-expert.ru">accountant@balanse-expert.ru</a>
+				<span class="header__copy js-headerMailcopy">Скопировать почту</span></li>
 		</ul>
 		<div class="header__callback">
 			<a href="tel:+74957900442 ">+7 (495) 790-04-42 </a>

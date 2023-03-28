@@ -11,7 +11,10 @@ if (!function_exists('add_scripts')) { // если ф-я уже есть в до
         wp_deregister_script('jquery'); // выключаем стандартный jquery
         wp_register_script('jquery_new', '//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js', '', '', true);
         wp_enqueue_script('maskedinput', get_template_directory_uri() . '/js/jquery.maskedinput.min.js', array('jquery_new'), '', true);    // masked
-       
+        wp_enqueue_script('nouislider', get_template_directory_uri() . '/js/nouislider.min.js', array('jquery_new'), '', true);    // nouislider
+	      wp_enqueue_script('gsap', get_template_directory_uri() . '/js/gsap.js', array('jquery_new'), '', true);    // gsap
+        wp_enqueue_script('wNumb', get_template_directory_uri() . '/js/wNumb.js', array('nouislider'), '', true);    // nouislider
+
        
         wp_enqueue_script('slickjs', '//multibuhgalter.ru/authform/multibuhgalter-auth.js', array('jquery_new'), false, true); // слайдер слик
 	
@@ -31,7 +34,8 @@ if (!function_exists('add_styles')) { // если ф-я уже есть в до�
 //        wp_enqueue_style('slickcss', '//cdn.jsdelivr.net/jquery.slick/1.4.1/slick.css'); // слайдер слик
 //        wp_enqueue_style('owlcarousel', get_template_directory_uri() . '/css/owl.carousel.min.css'); // owl.carousel
 //        wp_enqueue_style('owlcarouseltheme', get_template_directory_uri() . '/css/owl.theme.default.min.css'); // owl.theme.default
-        wp_enqueue_style('style', get_template_directory_uri() . '/css/style.css'); // основные стили шаблона
+      wp_enqueue_style('style', get_template_directory_uri() . '/css/style.css'); // основные стили шаблона
+      wp_enqueue_style('loader', get_template_directory_uri() . '/css/loader.css'); // основные стили шаблона
         wp_enqueue_style('main', get_template_directory_uri() . '/style.css'); // стили темы
     }
 }

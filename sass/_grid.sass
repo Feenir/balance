@@ -11,6 +11,9 @@
   background-color: #AF8E7B
   box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3)
 
+html
+  scroll-behavior: smooth
+
 body
   box-sizing: border-box
   font-family: 'Lato'
@@ -82,6 +85,7 @@ img
   max-width: 100%
 
 button
+  font-family: 'Lato'
   text-decoration: none
   border: none
   outline: none
@@ -104,7 +108,7 @@ button
 .pages-additional
   background-image: linear-gradient(to right top, #ffffff, #776154, #AF8E7B, #222222, #776154)
   margin-top: 150px
-  text-align: left
+  text-align: center
   @media (max-width: 768px)
     margin-top: 200px
 
@@ -129,6 +133,7 @@ button
   width: calc(100% - 80px)
   transform: rotate(180deg)
   right: 0
+  z-index: 10
   &_footer
     height: 22px
   @media (max-width: 768px)
@@ -175,4 +180,39 @@ button
     top: 50%
   100%
     top: 0
+
+.pay-form
+  margin-bottom: 80px!important
+  &__button
+    align-items: center
+    justify-content: center
+    border-radius: 25px!important
+    padding: 14px 30px!important
+    transition: filter 0.5s
+    min-height: 50px!important
+    flex: 1
+    background-image: linear-gradient(180deg, #50443f 0%, #AF8E7B 100%) !important
+    border: 2px solid #AF8E7B
+    max-width: 100%
+    display: flex
+    margin-right: 0!important
+    & span
+      text-align: center!important
+  &__item
+    font-size: 16px!important
+    padding: 0 15px!important
+    border: 1px solid #AF8E7B!important
+    border-radius: 25px!important
+    resize: none!important
+    outline: none!important
+    &_input
+      min-height: 50px
+      @media (max-width: 480px)
+        min-height: 50px!important
+    &_textarea
+      padding-top: 10px!important
+
+.yoomoney-payment-form .ym-input-icon-rub:after
+  top: 8px!important
+
 

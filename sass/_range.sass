@@ -1,0 +1,70 @@
+.range
+	margin-bottom: 40px
+	cursor: pointer
+	@media (max-width: 768px)
+		width: calc(100% - 20px)
+	&__label-hidden, &__steps-hidden
+		position: absolute
+		top: -999px
+		left: -999px
+		opacity: 0
+		visibility: hidden
+		pointer-events: none
+		width: 0
+		height: 0
+
+	&__number-inner
+		display: flex
+		justify-content: space-between
+		width: calc(100% + 19px)
+		margin-top: 15px
+
+
+	&__number
+		font-weight: 400
+		font-size: 14px
+		line-height: 16px
+		color: rgba(255, 255, 255, 0.85)
+		&--before
+			position: relative
+			left: 3px
+
+	& .noUi-target
+		height: 3px
+		border: none
+		box-shadow: none
+		background: rgba(255, 255, 255, 0.33)
+
+	& .noUi-connects
+		padding: 10px
+		top: -8px
+
+	& .noUi-connect
+		background: #FFFFFF
+		height: 3px
+		top: 8px
+
+
+
+	& .noUi-handle
+		cursor: grab
+		border-radius: 50%
+		box-shadow: none!important
+		width: 19px!important
+		height: 19px!important
+		background: #AF8E7B
+		border: 7px solid #FFFFFF
+		top: -8px!important
+		&:before, &:after
+			display: none
+
+	& .noUi-tooltip
+		border: none
+		background: none!important
+		bottom: -35px!important
+		font-weight: 400
+		font-size: 14px
+		line-height: 16px
+		text-align: center
+		color: #AF8E7B
+		transition: bottom .5s
